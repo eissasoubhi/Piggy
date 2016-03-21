@@ -120,6 +120,10 @@ body.nav-sm .profile {
     margin-top: 20px;
     border: 1px solid rgba(52, 73, 94, 0.44);
     padding: 4px;
+    height: 55px;
+    text-align: center;
+    line-height: 41px;
+    font-size: 30px;
 }
 
 .profile_info {
