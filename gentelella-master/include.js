@@ -1,6 +1,6 @@
 ready(function()
 {
-    var html_file, comment, filename;
+    var html_file, marker, filename;
 
     var include_elements = document.querySelectorAll('include');
 
@@ -15,15 +15,15 @@ ready(function()
             get( html_file, function(partial)
             {
 
-                if (include.getAttribute('comment') === "true")
-                {   // insert comment
+                if (include.getAttribute('marker') !== "false")
+                {   // insert marker
 
                     html_file = include.getAttribute('src');
                     filename = getFileName(html_file);
-                    begin_comment = commentElement('begin '+filename)
-                    end_comment = commentElement('end '+filename, 10)
+                    begin_marker = createCommentElement('marker-begin '+filename)
+                    end_marker = createCommentElement('marker-end '+filename, 10)
 
-                    partial = begin_comment + partial +end_comment;
+                    partial = begin_marker + partial + end_marker;
                 };
 
                 include.outerHTML = partial;  //insert the partial file content
@@ -46,7 +46,7 @@ ready(function()
     }
 
     // creates an html comment element
-    function commentElement (text, length)
+    function createCommentElement (text, length)
     {
         if (typeof length === 'undefined')
         {   // default value (starts number)
