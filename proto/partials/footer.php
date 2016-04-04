@@ -69,3 +69,19 @@
     <!-- Autocomplete -->
     <script type="text/javascript" src="js/autocomplete/countries.js"></script>
     <script src="js/autocomplete/jquery.autocomplete.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                'use strict';
+                var countriesArray = $.map(countries, function(value, key) {
+                    return {
+                        value: value,
+                        data: key
+                    };
+                });
+                // Initialize autocomplete with custom appendTo:
+                $('#auocomplete_search').autocomplete({
+                    lookup: countriesArray,
+                    appendTo: '#auocomplete_search_container'
+                });
+            });
+        </script>

@@ -24,6 +24,8 @@
     <link href="css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
     <link href="css/floatexamples.css" rel="stylesheet" type="text/css" />
 
+    <link href="css/select/select2.min.css" rel="stylesheet" type="text/css" />
+
     <script src="js/jquery.min.js"></script>
     <script src="js/nprogress.js"></script>
 
@@ -65,7 +67,7 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a href="#"><i class="fa fa-bar-chart"></i> Dashboard </span></a>
+                                <li><a href="index.php"><i class="fa fa-bar-chart"></i> Dashboard </span></a>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-list-ol"></i> List of ...<span class="fa fa-chevron-down"></span></a>
@@ -126,6 +128,17 @@
                                 <p class="navbar-btn">
                                     <a href="new-transaction.html" class="btn btn-success">Make a transaction</a>
                                 </p>
+                            </li>
+                            <li class="main_search col-md-12">
+                                <div class=" form-group pull-right top_search ">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="auocomplete_search" placeholder="Search for...">
+                                        <div id="auocomplete_search_container" style="position: absolute; float: left; width: 400px; margin: 33px;"></div>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </nav>

@@ -116,7 +116,7 @@
             </div>
             <!-- /page content -->
 <?php include_once 'partials/footer.php'; ?>
-            <script type="text/javascript">
+        <script type="text/javascript">
             $(function() {
                 'use strict';
                 var countriesArray = $.map(countries, function(value, key) {
@@ -132,7 +132,6 @@
                 });
             });
         </script>
-
 
         <!-- select2 -->
         <script>

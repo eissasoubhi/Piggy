@@ -624,7 +624,7 @@ a:focus {
 
 .top_nav .navbar-right {
     margin: 0;
-    width: 70%;
+    width: 85%;
     float: right;
 }
 
@@ -801,6 +801,26 @@ li.current-page a {
 
 .top_search {
     padding: 0;
+}
+
+.main_search {
+    width: 65%;
+}
+
+.main_search .top_search{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 1190px){
+    .main_search {
+        width: 100%;
+    }
+    .main_search .top_search{
+        margin-right: 0;
+        margin-top: 0;
+    }
+
 }
 
 .top_search .form-control {
