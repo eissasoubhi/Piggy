@@ -64,34 +64,54 @@
                     <!-- /menu prile quick info -->
                     <br />
                     <!-- sidebar menu -->
+                    <!-- <li><a href="list-mb.php">Money Boxes</a>
+                                        </li>
+                                        <li><a href="list.php">Money Trackers</a>
+                                        </li>
+                                        <li><a href="list.php">Groups</a>
+                                        </li>
+                                        <li><a href="list.php">Transactions</a>
+                                        </li> -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
                                 <li><a href="index.php"><i class="fa fa-bar-chart"></i> Dashboard </span></a>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-list-ol"></i> List of ...<span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-credit-card"></i> Transaction<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="list-mb.php">Money Boxes</a>
+                                        <li><a href="list-mb.php">Transactions list</a>
                                         </li>
-                                        <li><a href="list-mb.php">Money Trackers</a>
-                                        </li>
-                                        <li><a href="list-mb.php">Groups</a>
-                                        </li>
-                                        <li><a href="list-mb.php">Transactions</a>
+                                        <li><a href="list.php">New transaction</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-plus"></i> Add new <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-archive"></i> Money Box <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="new-mb.php">Money Box</a>
+                                        <li><a href="new-mb.php">MBs list</a>
                                         </li>
-                                        <li><a href="new-mb.php">Money Tracker</a>
+                                        <li><a href="new-mb.php">New MB</a>
                                         </li>
-                                        <li><a href="new-mb.php">Groups</a>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-map"></i> Money Tracker <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="new-mb.php">MTs list</a>
                                         </li>
-                                        <li><a href="new-transaction.php">Transaction</a>
+                                        <li><a href="new-mb.php">New MT</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-folder"></i> Group <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li><a href="new-mb.php">MB-Groups list</a>
+                                        </li>
+                                        <li><a href="new-mb.php">MT-Groups list</a>
+                                        </li>
+                                        <li><a href="new-mb.php">New group</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -129,7 +149,7 @@
                                     <a href="new-transaction.html" class="btn btn-success">Make a transaction</a>
                                 </p>
                             </li>
-                            <li class="main_search col-md-12">
+                            <!-- <li class="main_search col-md-12">
                                 <div class=" form-group pull-right top_search ">
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="auocomplete_search" placeholder="Search for...">
@@ -139,7 +159,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                     </nav>
                 </div>
