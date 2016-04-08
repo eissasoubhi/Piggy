@@ -1,0 +1,5 @@
+mb : name, location, amount, parernt group
+mt : name, location, chart, parernt group
+mbgroup : name, location, amount, parernt group, mbcount, submbgroup count
+mtgroup : name, location, chart, parernt group, mtcount, submtgroup count
+transaction : date, from, to, amount, scheduled, next scheduled transaction 
