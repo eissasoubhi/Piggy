@@ -2,28 +2,12 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
-
-                    <div class="page-title">
-                        <div class="title_left">
-                            <h3>Form Elements</h3>
-                        </div>
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Form Design <small>different form elements</small></h2>
+                                    <h2>Make new transaction <small>34 transactions are made this month</small></h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -58,11 +42,11 @@
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_group form-control" required="required">
-                                                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="HI">Hawaii</option>
+                                                    <optgroup label="Money Boxes">
+                                                        <option value="AK">Bank account</option>
+                                                        <option value="HI">Wallet</option>
                                                     </optgroup>
-                                                    <optgroup label="Pacific Time Zone">
+                                                    <optgroup label="Money Trackers">
                                                         <option value="CA">California</option>
                                                         <option value="NV">Nevada</option>
                                                         <option value="OR">Oregon</option>
@@ -111,7 +95,7 @@
                                             </div>
                                             <div class="col-md-4 col-sm-4 col-xs-12">
                                                 <select class="select2_group form-control" required="required">
-                                                    <option value="mounth">mounth(s)</option>
+                                                    <option value="month">month(s)</option>
                                                     <option value="week">week(s)</option>
                                                     <option value="day">day(s)</option>
                                                 </select>
