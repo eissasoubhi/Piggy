@@ -80,7 +80,7 @@
                                 <li>
                                     <a><i class="fa fa-credit-card"></i> Transaction<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="list-mb.php">Transactions list</a>
+                                        <li><a href="list-tran.php">Transactions list</a>
                                         </li>
                                         <li><a href="list.php">New transaction</a>
                                         </li>
@@ -89,7 +89,7 @@
                                 <li>
                                     <a><i class="fa fa-archive"></i> Money Box <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="new-mb.php">MBs list</a>
+                                        <li><a href="list-mb.php">MBs list</a>
                                         </li>
                                         <li><a href="new-mb.php">New MB</a>
                                         </li>
@@ -98,7 +98,7 @@
                                 <li>
                                     <a><i class="fa fa-map"></i> Money Tracker <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="new-mb.php">MTs list</a>
+                                        <li><a href="list-mt.php">MTs list</a>
                                         </li>
                                         <li><a href="new-mb.php">New MT</a>
                                         </li>
@@ -107,7 +107,7 @@
                                 <li>
                                     <a><i class="fa fa-folder"></i> Group <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
-                                        <li><a href="new-mb.php">MB-Groups list</a>
+                                        <li><a href="list-mbgroup.php">MB-Groups list</a>
                                         </li>
                                         <li><a href="new-mb.php">MT-Groups list</a>
                                         </li>

@@ -23,6 +23,8 @@
                                                 <th>Location </th>
                                                 <th>Amount </th>
                                                 <th>Parent group </th>
+                                                <th>Children Money Boxes </th>
+                                                <th>Children sub-groups </th>
                                                 <th>Created at </th>
                                                 <th>Updated at </th>
                                                 <th class=" no-link last"><span class="nobr">Action</span>
@@ -35,10 +37,12 @@
                                                 <td class="a-center ">
                                                     <input type="checkbox" class="tableflat">
                                                 </td>
-                                                <td class=" ">Job sallery</td>
-                                                <td class=" ">Home <i class="fa fa-angle-right"></i> Banck account  </td>
+                                                <td class=" ">Banck account</td>
+                                                <td class=" ">Home </td>
                                                 <td class=" ">$7877.45 </td>
-                                                <td class=" "> Banck account </td>
+                                                <td class=" "> - </td>
+                                                <td class=" "> 2 Money Boxes </td>
+                                                <td class=" "> 3 Money Boxes </td>
                                                 <td class=" ">May 23, 2014 11:47:56 PM</td>
                                                 <td class="a-right a-right "> May 23, 2014 11:47:56 PM</td>
                                                 <td class=" last">
@@ -54,38 +58,10 @@
                                                 <td class=" ">Home </td>
                                                 <td class=" ">$741.20 </td>
                                                 <td class=" "> - </td>
+                                                <td class=" "> 4 Money Boxes </td>
+                                                <td class=" "> 8 Money Boxes </td>
                                                 <td class=" ">May 23, 2014 11:30:12 PM</td>
                                                 <td class="a-right a-right ">May 23, 2014 11:30:12 PM</td>
-                                                <td class=" last">
-                                                    <a href="#"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" title=""><i class="fa fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr class="even pointer">
-                                                <td class="a-center ">
-                                                    <input type="checkbox" checked class="tableflat">
-                                                </td>
-                                                <td class=" ">Investement</td>
-                                                <td class=" ">Home </td>
-                                                <td class=" ">$432.26 </td>
-                                                <td class=" "> - </td>
-                                                <td class=" "> May 24, 2014 10:55:33 PM</td>
-                                                <td class="a-right a-right "> May 24, 2014 10:55:33 PM</td>
-                                                <td class=" last">
-                                                    <a href="#"><i class="fa fa-edit"></i></a>
-                                                    <a href="#" title=""><i class="fa fa-times"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr class="odd pointer">
-                                                <td class="a-center ">
-                                                    <input type="checkbox" class="tableflat">
-                                                </td>
-                                                <td class=" ">Jhon loan</td>
-                                                <td class=" ">Home <i class="fa fa-angle-right"></i> Loans </td>
-                                                <td class=" ">$333.21 </td>
-                                                <td class=" "> Loans </td>
-                                                <td class=" "> May 24, 2014 10:52:44 PM</td>
-                                                <td class="a-right a-right ">May 24, 2014 10:52:44 PM</td>
                                                 <td class=" last">
                                                     <a href="#"><i class="fa fa-edit"></i></a>
                                                     <a href="#" title=""><i class="fa fa-times"></i></a>
