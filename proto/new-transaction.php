@@ -8,21 +8,6 @@
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Make new transaction <small>34 transactions are made this month</small></h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -44,17 +29,14 @@
                                                 <select class="select2_group form-control" required="required">
                                                     <optgroup label="Money Boxes">
                                                         <option value="AK">Bank account</option>
-                                                        <option value="HI">Wallet</option>
+                                                        <option selected value="HI">Wallet</option>
                                                     </optgroup>
                                                     <optgroup label="Money Trackers">
-                                                        <option value="CA">California</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="OR">Oregon</option>
-                                                    </optgroup>
-                                                    <optgroup label="Mountain Time Zone">
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="ID">Idaho</option>
+                                                        <option value="CA">Books</option>
+                                                        <option value="NV">Traveling</option>
+                                                        <option value="OR">Clothes</option>
+                                                        <option value="OR">Phone</option>
+                                                        <option value="OR">Computer</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -65,19 +47,16 @@
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select class="select2_group form-control" required="required">
-                                                    <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="HI">Hawaii</option>
+                                                    <optgroup label="Money Boxes">
+                                                        <option value="AK">Bank account</option>
+                                                        <option value="HI">Wallet</option>
                                                     </optgroup>
-                                                    <optgroup label="Pacific Time Zone">
-                                                        <option value="CA">California</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="OR">Oregon</option>
-                                                    </optgroup>
-                                                    <optgroup label="Mountain Time Zone">
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="ID">Idaho</option>
+                                                    <optgroup label="Money Trackers">
+                                                        <option selected value="CA">Books</option>
+                                                        <option value="NV">Traveling</option>
+                                                        <option value="OR">Clothes</option>
+                                                        <option value="OR">Phone</option>
+                                                        <option value="OR">Computer</option>
                                                     </optgroup>
                                                 </select>
                                             </div>

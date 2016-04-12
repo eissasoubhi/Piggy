@@ -109,7 +109,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="list-mbgroup.php">MB-Groups list</a>
                                         </li>
-                                        <li><a href="new-mb.php">MT-Groups list</a>
+                                        <li><a href="list-mtgroup.php">MT-Groups list</a>
                                         </li>
                                         <li><a href="new-mb.php">New group</a>
                                         </li>
