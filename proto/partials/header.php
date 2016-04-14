@@ -75,14 +75,14 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a href="index.php"><i class="fa fa-bar-chart"></i> Dashboard </span></a>
+                                <li><a href="index1.php"><i class="fa fa-bar-chart"></i> Dashboard </span></a>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-credit-card"></i> Transaction<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="list-tran.php">Transactions list</a>
                                         </li>
-                                        <li><a href="list.php">New transaction</a>
+                                        <li><a href="new-transaction.php">New transaction</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -100,7 +100,7 @@
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="list-mt.php">MTs list</a>
                                         </li>
-                                        <li><a href="new-mb.php">New MT</a>
+                                        <li><a href="new-mt.php">New MT</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -111,7 +111,7 @@
                                         </li>
                                         <li><a href="list-mtgroup.php">MT-Groups list</a>
                                         </li>
-                                        <li><a href="new-mb.php">New group</a>
+                                        <li><a href="new-group.php">New group</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -135,7 +135,7 @@
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                    <li><a href="javascript:;">  Profile</a>
+                                    <li><a href="profile.php">  Profile</a>
                                     </li>
                                     <li>
                                         <a href="javascript:;">Help</a>

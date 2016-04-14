@@ -26,19 +26,7 @@
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">From <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select class="select2_group form-control" required="required">
-                                                    <optgroup label="Money Boxes">
-                                                        <option value="AK">Bank account</option>
-                                                        <option selected value="HI">Wallet</option>
-                                                    </optgroup>
-                                                    <optgroup label="Money Trackers">
-                                                        <option value="CA">Books</option>
-                                                        <option value="NV">Traveling</option>
-                                                        <option value="OR">Clothes</option>
-                                                        <option value="OR">Phone</option>
-                                                        <option value="OR">Computer</option>
-                                                    </optgroup>
-                                                </select>
+                                                <?php $selected="Wallet"; include 'mb&mt-dropdown.php'; ?>
                                             </div>
                                         </div>
 
@@ -46,19 +34,7 @@
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">To <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <select class="select2_group form-control" required="required">
-                                                    <optgroup label="Money Boxes">
-                                                        <option value="AK">Bank account</option>
-                                                        <option value="HI">Wallet</option>
-                                                    </optgroup>
-                                                    <optgroup label="Money Trackers">
-                                                        <option selected value="CA">Books</option>
-                                                        <option value="NV">Traveling</option>
-                                                        <option value="OR">Clothes</option>
-                                                        <option value="OR">Phone</option>
-                                                        <option value="OR">Computer</option>
-                                                    </optgroup>
-                                                </select>
+                                                <?php $selected="Books"; include 'mb&mt-dropdown.php'; ?>
                                             </div>
                                         </div>
                                         <div class="form-group">
