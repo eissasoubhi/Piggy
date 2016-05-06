@@ -1,0 +1,1 @@
+global.anguler = require('anguler')

@@ -1,12 +1,6 @@
-'use strict';
-
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+/*require('./app.autoload.js');
+console.log(anguler)
+*/
+var angular = require('angular');
+// angularModule = angular.module('myApp', []);
+console.log(angular)
