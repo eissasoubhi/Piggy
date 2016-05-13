@@ -63,15 +63,6 @@
                     </div>
                     <!-- /menu prile quick info -->
                     <br />
-                    <!-- sidebar menu -->
-                    <!-- <li><a href="list-mb.php">Money Boxes</a>
-                                        </li>
-                                        <li><a href="list.php">Money Trackers</a>
-                                        </li>
-                                        <li><a href="list.php">Groups</a>
-                                        </li>
-                                        <li><a href="list.php">Transactions</a>
-                                        </li> -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">

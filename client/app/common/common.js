@@ -1,10 +1,10 @@
 import angular from 'angular';
-import Navbar from './navbar/navbar';
+import Topnav from './topnav/topnav';
 import Hero from './hero/hero';
 import User from './user/user';
 
 let commonModule = angular.module('app.common', [
-  Navbar.name,
+  Topnav.name,
   Hero.name,
   User.name
 ]);
