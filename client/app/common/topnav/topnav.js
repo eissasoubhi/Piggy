@@ -6,6 +6,6 @@ let topnavModule = angular.module('topnav', [
   uiRouter
 ])
 
-.component('topnav', topnavComponent);
+.component('topNav', topnavComponent);
 
 export default topnavModule;
