@@ -11,10 +11,10 @@ plots, you can just fix the size of their placeholders.
 */
 
 
-/* Inline dependency: 
+/* Inline dependency:
  * jQuery resize event - v1.2 - 3/14/2010
  * http://benalman.com/projects/jquery-resize-plugin/
- * 
+ *
  * Copyright (c) 2010 "Cowboy" Ben Alman
  * Dual licensed under the MIT and GPL licenses.
  * http://benalman.com/about/license/
@@ -38,16 +38,16 @@ plots, you can just fix the size of their placeholders.
                 // when we don't have the dimensions
                 if (placeholder.width() == 0 || placeholder.height() == 0)
                     return;
-                
+
                 ++redrawing;
                 $.plot(placeholder, plot.getData(), plot.getOptions());
                 --redrawing;
             }
         }
-        
+
         plot.hooks.bindEvents.push(bindEvents);
     }
-    
+
     $.plot.plugins.push({
         init: init,
         options: options,
