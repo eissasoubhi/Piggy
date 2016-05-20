@@ -8,7 +8,7 @@
 $(function () {
     $('#sidebar-menu li ul').slideUp();
     $('#sidebar-menu li').removeClass('active');
-    alert('ok')
+    // alert('ok')
     $('#sidebar-menu li').on('click touchstart', function() {
         var link = $('a', this).attr('href');
 
@@ -313,11 +313,11 @@ $(function () {
 
 /** ******  scrollview  *********************** **/
 $(document).ready(function () {
-
-    $(".scroll-view").niceScroll({
+    // console.log($(".scroll-view"))
+/*    $(".scroll-view").niceScroll({
         touchbehavior: true,
         cursorcolor: "rgba(42, 63, 84, 0.35)"
-    });
+    });*/
 
 });
 /** ******  /scrollview  *********************** **/

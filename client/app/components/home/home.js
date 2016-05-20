@@ -1,8 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
-import bootstrap from 'bootstrap';
-console.dir(bootstrap)
+import './home.script.js';
+
 let homeModule = angular.module('home', [
   uiRouter
 ])
