@@ -20,5 +20,3 @@ var app = angular.module('app', [
 
   .component('app', AppComponent);
 
-
-
