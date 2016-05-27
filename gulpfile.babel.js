@@ -42,6 +42,7 @@ let paths = {
   ],
   output: root,
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
+  blankDirectiveTemplates: path.join(__dirname, 'generator', 'directive/**/*.**'),
   dest: path.join(__dirname, 'dist')
 };
 
@@ -106,6 +107,25 @@ gulp.task('component', () => {
   const destPath = path.join(resolveToComponents(), parentPath, name);
 
   return gulp.src(paths.blankTemplates)
+    .pipe(template({
+      name: name,
+      upCaseName: cap(name)
+    }))
+    .pipe(rename((path) => {
+      path.basename = path.basename.replace('temp', name);
+    }))
+    .pipe(gulp.dest(destPath));
+});
+
+gulp.task('directive', () => {
+  const cap = (val) => {
+    return val.charAt(0).toUpperCase() + val.slice(1);
+  };
+  const name = yargs.argv.name;
+  const parentPath = yargs.argv.parent || '../common/directives';
+  const destPath = path.join(resolveToComponents(), parentPath, name);
+
+  return gulp.src(paths.blankDirectiveTemplates)
     .pipe(template({
       name: name,
       upCaseName: cap(name)

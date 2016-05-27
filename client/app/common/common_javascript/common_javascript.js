@@ -10,14 +10,14 @@
     // // import './../../assets/js/gauge/gauge_demo.js';
     // import './../../assets/js/progressbar/bootstrap-progressbar.min.js';
     // import './../../assets/js/nicescroll/jquery.nicescroll.min.js';
-    // // import './../../assets/js/icheck/icheck.min.js';
+    import 'icheck';
     // import './../../assets/js/moment/moment.min.js';
     // import './../../assets/js/datepicker/daterangepicker.js';
     import 'chart.js';
     import './../../assets/js/custom.js';
 
     import 'dataTables';
-    import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
+    // import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
 
     // import './../../assets/js/flot/jquery.flot.js';
     // import './../../assets/js/flot/jquery.flot.pie.js';
