@@ -16,8 +16,8 @@
     import 'chart.js';
     import './../../assets/js/custom.js';
 
-    import 'dataTables';
-    // import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
+    import 'datatables';
+    import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
 
     // import './../../assets/js/flot/jquery.flot.js';
     // import './../../assets/js/flot/jquery.flot.pie.js';

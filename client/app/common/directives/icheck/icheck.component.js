@@ -5,9 +5,9 @@ let icheckComponent = function ()
         link: function(scope, element, attrs)
             {
                 var data = scope.$eval(attrs.icheck);
-                $(element).click(function(event) {
-                    console.log('icheck was successfully implimented with data : ')
-                    console.log(attrs.icheck)
+                $(element).iCheck({
+                    checkboxClass: 'icheckbox_flat-green',
+                    radioClass: 'iradio_flat-green'
                 });
             }
     }
