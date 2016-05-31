@@ -14,7 +14,7 @@ class TransactionsListController {
                                 "sPaginationType": "full_numbers",
                                 "dom": 'T<"clear">lfrtip',
                                 "tableTools": {
-                                    "sSwfPath": "js/datatables/tools/swf/copy_csv_xls_pdf.swf"
+                                    "sSwfPath": "app/assets/js/datatables/tools/swf/copy_csv_xls_pdf.swf"
                                 }
                             };
   }

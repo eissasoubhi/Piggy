@@ -15,7 +15,7 @@
                             <thead>
                                 <tr class="headings">
                                     <th>
-                                        <input type="checkbox" class="tableflat" icheck="testu">
+                                        <input type="checkbox" class="tableflat" icheck>
                                     </th>
                                     <th>From </th>
                                     <th>To </th>
@@ -32,7 +32,7 @@
                             <tbody>
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                        <input type="checkbox" class="tableflat">
+                                        <input type="checkbox" class="tableflat" icheck>
                                     </td>
                                     <td class=" ">Bank account</td>
                                     <td class=" ">Wallet</td>
@@ -48,7 +48,7 @@
                                 </tr>
                                 <tr class="odd pointer selected">
                                     <td class="a-center ">
-                                        <input type="checkbox" class="tableflat">
+                                        <input type="checkbox" class="tableflat" icheck>
                                     </td>
                                     <td class=" ">Bank account</td>
                                     <td class=" ">
@@ -68,7 +68,7 @@
                                 </tr>
                                 <tr class="even pointer">
                                     <td class="a-center ">
-                                        <input type="checkbox" checked class="tableflat">
+                                        <input type="checkbox" checked class="tableflat" icheck>
                                     </td>
                                     <td class=" ">Wallet</td>
                                     <td class=" ">
@@ -87,7 +87,7 @@
                                 </tr>
                                 <tr class="odd pointer">
                                     <td class="a-center ">
-                                        <input type="checkbox" class="tableflat">
+                                        <input type="checkbox" class="tableflat" icheck>
                                     </td>
                                     <td class=" ">Bank account</td>
                                     <td class=" ">
@@ -107,7 +107,7 @@
                                 </tr>
                                 <tr class="odd pointer">
                                     <td class="a-center ">
-                                        <input type="checkbox" class="tableflat">
+                                        <input type="checkbox" class="tableflat" icheck>
                                     <td class=" ">Bank account</td>
                                     <td class=" ">
                                     Home <i class="fa fa-angle-right"></i>
@@ -148,12 +148,7 @@
     <!-- /footer content -->
 </div>
 <script>
-        $(document).ready(function() {
-            $('input.tableflat').iCheck({
-                checkboxClass: 'icheckbox_flat-green',
-                radioClass: 'iradio_flat-green'
-            });
-        });
+
 
         var asInitVals = new Array();
         $(document).ready(function() {
