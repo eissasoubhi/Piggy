@@ -40,7 +40,8 @@
     // import './../../assets/js/editor/bootstrap-wysiwyg.js';
     // import './../../assets/js/editor/external/jquery.hotkeys.js';
     // import './../../assets/js/editor/external/google-code-prettify/prettify.js';
-    // import './../../assets/js/select/select2.full.js';
+    import 'select2';
+    // import 'select2/select2.css';
     // import './../../assets/js/parsley/parsley.min.js';
     // import './../../assets/js/textarea/autosize.min.js';
     //     autosize($('.resizable_textarea'));
