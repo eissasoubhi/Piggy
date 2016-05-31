@@ -6,6 +6,7 @@ let select2Component = function ()
             {
                 var data = scope.$eval(attrs.select2);
                 $(element).select2(data);
+                $(element).hide();
             }
     }
 }

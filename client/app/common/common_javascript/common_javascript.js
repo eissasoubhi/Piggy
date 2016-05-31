@@ -40,8 +40,10 @@
     // import './../../assets/js/editor/bootstrap-wysiwyg.js';
     // import './../../assets/js/editor/external/jquery.hotkeys.js';
     // import './../../assets/js/editor/external/google-code-prettify/prettify.js';
-    import 'select2';
-    // import 'select2/select2.css';
+    import 'select2/dist/js/select2.full.min.js';
+    // import 'select2/dist/css/select2.min.css';
+    import './../../assets/css/select/select2.min.css';
+    // import './../../assets/js/select/select2.full.js';
     // import './../../assets/js/parsley/parsley.min.js';
     // import './../../assets/js/textarea/autosize.min.js';
     //     autosize($('.resizable_textarea'));
