@@ -9,6 +9,7 @@
     "bootstrap": "^3.3.6",
     "chart.js": "^2.1.3",
     "datatables": "^1.10.12",
+    "devbridge-autocomplete": "^1.2.24",
     "icheck": "^1.0.2",
     "normalize.css": "^3.0.3",
     "select2": "^4.0.3"
