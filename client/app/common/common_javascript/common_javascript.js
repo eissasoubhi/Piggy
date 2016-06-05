@@ -3,6 +3,7 @@
     import 'expose?jQuery!jquery';
     import 'expose?$!jquery';
     import './utility/tools.js';
+    import './utility/helpers.js';
     // import './../../assets/js/nprogress.js';
     import 'bootstrap';
     // // import 'expose-loader?window.Gauge!./../../assets/js/gauge/gauge.min.js';

@@ -1,16 +1,16 @@
-import LineChartModule from './lineChart'
-import LineChartController from './lineChart.controller';
-import LineChartComponent from './lineChart.component';
-import LineChartTemplate from './lineChart.html';
+import ChartModule from './chart'
+import ChartController from './chart.controller';
+import ChartComponent from './chart.component';
+import ChartTemplate from './chart.html';
 
-describe('LineChart', () => {
+describe('Chart', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(LineChartModule.name));
+  beforeEach(window.module(ChartModule.name));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new LineChartController();
+      return new ChartController();
     };
   }));
 
@@ -30,16 +30,16 @@ describe('LineChart', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(LineChartTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(ChartTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = LineChartComponent;
+      let component = ChartComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(LineChartTemplate);
+        expect(component.template).to.equal(ChartTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
@@ -47,7 +47,7 @@ describe('LineChart', () => {
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(LineChartController);
+        expect(component.controller).to.equal(ChartController);
       });
   });
 });

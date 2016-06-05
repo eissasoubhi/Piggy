@@ -1,16 +1,16 @@
-import HeroModule from './hero'
-import HeroController from './hero.controller';
-import HeroComponent from './hero.component';
-import HeroTemplate from './hero.html';
+import SidebarMenuModule from './sidebar_menu'
+import SidebarMenuController from './sidebar_menu.controller';
+import SidebarMenuComponent from './sidebar_menu.component';
+import SidebarMenuTemplate from './sidebar_menu.html';
 
-describe('Hero', () => {
+describe('SidebarMenu', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(HeroModule.name));
+  beforeEach(window.module(SidebarMenuModule.name));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new HeroController();
+      return new SidebarMenuController();
     };
   }));
 
@@ -30,16 +30,16 @@ describe('Hero', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(HeroTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(SidebarMenuTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = HeroComponent;
+      let component = SidebarMenuComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(HeroTemplate);
+        expect(component.template).to.equal(SidebarMenuTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
@@ -47,7 +47,7 @@ describe('Hero', () => {
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(HeroController);
+        expect(component.controller).to.equal(SidebarMenuController);
       });
   });
 });
