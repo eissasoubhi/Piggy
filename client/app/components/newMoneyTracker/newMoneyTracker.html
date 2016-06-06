@@ -1,6 +1,5 @@
 <div class="right_col" role="main">
     <div class="">
-        <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
@@ -19,7 +18,7 @@
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money Box Name <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money Tracker Name <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" id="mt-name" required="required" class="form-control col-md-7 col-xs-12">
@@ -27,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">parent mb-Group <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">parent mt-Group <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <select class="select2_group form-control" required="required" select2>
@@ -36,7 +35,7 @@
                                             <option value="Wallet">Wallet</option>
                                         </optgroup>
                                         <optgroup label="Money Trackers">
-                                            <option value="Books">Books</option>
+                                            <option selected value="Books">Books</option>
                                             <option value="Traveling">Traveling</option>
                                             <option value="Clothes">Clothes</option>
                                             <option value="Phone">Phone</option>
@@ -84,7 +83,6 @@
 
     </div>
 </div>
-
         <script type="text/javascript">
             $(function() {
                 'use strict';
@@ -102,6 +100,21 @@
             });
         </script>
 
+        <!-- select2 -->
+        <script>
+            $(document).ready(function() {
+                $(".select2_single").select2({
+                    placeholder: "Select a state",
+                    allowClear: true
+                });
+                $(".select2_group").select2({});
+                $(".select2_multiple").select2({
+                    maximumSelectionLength: 4,
+                    placeholder: "With Max Selection limit 4",
+                    allowClear: true
+                });
+            });
+        </script>
         <!-- /select2 -->
         <!-- input tags -->
         <script>

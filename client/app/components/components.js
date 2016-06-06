@@ -1,18 +1,19 @@
 import angular from 'angular';
-import Home from './home/home';
-import About from './about/about';
-import TransactionsList from './transactionsList/transactionsList';
-import newTransaction from './newTransaction/newTransaction';
-import moneyBoxesList from './moneyBoxesList/moneyBoxesList';
-import newMoneyBoxe from './newMoneyBoxe/newMoneyBoxe';
 
-let componentModule = angular.module('app.components', [
-  Home.name,
-  About.name,
-  TransactionsList.name,
-  newTransaction.name,
-  moneyBoxesList.name,
-  newMoneyBoxe.name,
-]);
+var components = ['transactionsList', 'moneyBoxesList', 'moneyTrackersList', 'moneyBoxGroupsList','moneyTrackerGroupsList', 'newMoneyBoxe', 'newGroup', 'newTransaction', 'newMoneyTracker', 'home', 'about'];
+
+var i, dependencies = [];
+
+for(i in components)
+{
+    var component_name = components[i];
+    var component = require('./' + component_name +'/' + component_name);
+    if(component.default && component.default.name)
+    {
+        dependencies.push(component.default.name)
+    }
+}
+let componentModule = angular.module('app.components', dependencies);
 
 export default componentModule;
+

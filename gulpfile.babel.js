@@ -102,6 +102,9 @@ gulp.task('component', () => {
   const cap = (val) => {
     return val.charAt(0).toUpperCase() + val.slice(1);
   };
+  const toDash = (val) => {
+    return  val.replace(/([A-Z])/g, function($1){return "-"+$1.toLowerCase();});
+  };
   const name = yargs.argv.name;
   const parentPath = yargs.argv.parent || '';
   const destPath = path.join(resolveToComponents(), parentPath, name);
@@ -109,7 +112,8 @@ gulp.task('component', () => {
   return gulp.src(paths.blankTemplates)
     .pipe(template({
       name: name,
-      upCaseName: cap(name)
+      upCaseName: cap(name),
+      dashedName: toDash(name)
     }))
     .pipe(rename((path) => {
       path.basename = path.basename.replace('temp', name);
