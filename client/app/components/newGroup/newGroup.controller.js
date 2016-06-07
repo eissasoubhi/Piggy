@@ -1,6 +1,11 @@
 class NewGroupController {
   constructor() {
-    this.name = 'newGroup';
+    this.countries_array = $.map(document.countries, function(value, key) {
+                    return {
+                        value: value,
+                        data: key
+                    };
+                });
   }
 }
 

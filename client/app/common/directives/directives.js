@@ -1,4 +1,4 @@
-var directives = ['chart', 'collapseLink', 'jsDataTable', 'icheck', 'select2']
+var directives = ['chart', 'collapseLink', 'jsDataTable', 'icheck', 'select2', 'autocomplete']
 
 var i, dependencies = [];
 

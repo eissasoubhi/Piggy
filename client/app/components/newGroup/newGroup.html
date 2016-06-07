@@ -38,7 +38,7 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money group <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="mt-name" required="required" class="form-control col-md-7 col-xs-12">
+                                    <input type="text" id="mt-name" required="required" class="form-control col-md-7 col-xs-12" autocomplete="vm.countries_array" data-append-to="#autocomplete-container">
                                     <div id="autocomplete-container" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
                                 </div>
                             </div>
@@ -110,87 +110,6 @@
 
     </div>
 </div>
-        <script type="text/javascript">
-            $(function() {
-                'use strict';
-                var countriesArray = $.map(countries, function(value, key) {
-                    return {
-                        value: value,
-                        data: key
-                    };
-                });
-                // Initialize autocomplete with custom appendTo:
-                $('#mt-name, #autocomplete-custom-append').autocomplete({
-                    lookup: countriesArray,
-                    appendTo: '#autocomplete-container'
-                });
-            });
-        </script>
-
-        <script>
-            function onAddTag(tag) {
-                alert("Added a tag: " + tag);
-            }
-
-            function onRemoveTag(tag) {
-                alert("Removed a tag: " + tag);
-            }
-
-            function onChangeTag(input, tag) {
-                alert("Changed a tag: " + tag);
-            }
-
-            $(function() {
-                $('#tags_1').tagsInput({
-                    width: 'auto'
-                });
-            });
-        </script>
-        <!-- /input tags -->
-        <!-- form validation -->
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $.listen('parsley:field:validate', function() {
-                    validateFront();
-                });
-                $('#demo-form .btn').on('click', function() {
-                    $('#demo-form').parsley().validate();
-                    validateFront();
-                });
-                var validateFront = function() {
-                    if (true === $('#demo-form').parsley().isValid()) {
-                        $('.bs-callout-info').removeClass('hidden');
-                        $('.bs-callout-warning').addClass('hidden');
-                    } else {
-                        $('.bs-callout-info').addClass('hidden');
-                        $('.bs-callout-warning').removeClass('hidden');
-                    }
-                };
-            });
-
-            $(document).ready(function() {
-                $.listen('parsley:field:validate', function() {
-                    validateFront();
-                });
-                $('#demo-form2 .btn').on('click', function() {
-                    $('#demo-form2').parsley().validate();
-                    validateFront();
-                });
-                var validateFront = function() {
-                    if (true === $('#demo-form2').parsley().isValid()) {
-                        $('.bs-callout-info').removeClass('hidden');
-                        $('.bs-callout-warning').addClass('hidden');
-                    } else {
-                        $('.bs-callout-info').addClass('hidden');
-                        $('.bs-callout-warning').removeClass('hidden');
-                    }
-                };
-            });
-            try {
-                hljs.initHighlightingOnLoad();
-            } catch (err) {}
-        </script>
-        <!-- /form validation -->
         <!-- editor -->
         <script>
             $(document).ready(function() {
@@ -201,14 +120,7 @@
 
             $(function() {
                 function initToolbarBootstrapBindings() {
-                    var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
-                            'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
-                            'Times New Roman', 'Verdana'
-                        ],
-                        fontTarget = $('[title=Font]').siblings('.dropdown-menu');
-                    $.each(fonts, function(idx, fontName) {
-                        fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
-                    });
+
                     $('a[title]').tooltip({
                         container: 'body'
                     });

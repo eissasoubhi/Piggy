@@ -49,9 +49,10 @@
     // import './../../assets/js/textarea/autosize.min.js';
     //     autosize($('.resizable_textarea'));
 
-    import 'expose?countries!./../../assets/js/autocomplete/countries.js';
+    import './../../assets/js/autocomplete/countries.js';
     import 'devbridge-autocomplete';
-    var countriesArray = $.map(countries, function(value, key) {
+
+    var countriesArray = $.map(document.countries, function(value, key) {
         return {
             value: value,
             data: key
