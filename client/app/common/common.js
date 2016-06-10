@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-var commons = ['topnav', 'sidebar_menu', 'common_javascript', 'user', 'directives'];
+var commons = ['topnav', 'sidebar_menu', 'common_javascript', 'user', 'pageFooter', 'directives'];
 
 var i, dependencies = [];
 

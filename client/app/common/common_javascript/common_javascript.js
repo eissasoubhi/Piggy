@@ -12,8 +12,7 @@
     // import './../../assets/js/progressbar/bootstrap-progressbar.min.js';
     // import './../../assets/js/nicescroll/jquery.nicescroll.min.js';
     import 'icheck';
-    // import './../../assets/js/moment/moment.min.js';
-    // import './../../assets/js/datepicker/daterangepicker.js';
+    // import 'jquery-datetimepicker';
     import 'chart.js';
     import './../../assets/js/custom.js';
 
@@ -51,15 +50,3 @@
 
     import './../../assets/js/autocomplete/countries.js';
     import 'devbridge-autocomplete';
-
-    var countriesArray = $.map(document.countries, function(value, key) {
-        return {
-            value: value,
-            data: key
-        };
-    });
-    // Initialize autocomplete with custom appendTo:
-    $('#auocomplete_search').autocomplete({
-        lookup: countriesArray,
-        appendTo: '#auocomplete_search_container'
-    });
