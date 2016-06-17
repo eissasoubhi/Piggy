@@ -11,10 +11,11 @@ var app = angular.module('app', [
     Common.name,
     Components.name
   ])
-  .config(($locationProvider) => {
+  .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
     // #how-to-configure-your-server-to-work-with-html5mode
+    $urlRouterProvider.otherwise('/404');
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
 

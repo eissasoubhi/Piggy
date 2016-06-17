@@ -214,6 +214,9 @@ body.nav-md .container.body .right_col {
     padding: 10px 20px 0;
     margin-left: 230px;
 }
+body.nav-md .container.body .right_col.full_width {
+    margin-left: 0px;
+}
 
 .nav_title {
     width: 230px;
@@ -5685,7 +5688,7 @@ a.hiddenanchor{
 #wrapper{
     right: 0px;
     margin: 0px auto;
-    margin-top: 5%;
+    /*margin-top: 5%;*/
     max-width: 350px;
     position: relative;
 }
@@ -6389,4 +6392,13 @@ ul.notifications {
 }
 .copyright-info {
     padding: 8px 0;
+}
+.square.graph-key-color{
+    width: 10px;
+    height: 10px;
+    margin-top: 4px;
+    margin-right: 10px;
+}
+.square.graph-key-name{
+    margin-right: 20px;
 }

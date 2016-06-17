@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-var components = ['transactionsList', 'moneyBoxesList', 'moneyTrackersList', 'moneyBoxGroupsList','moneyTrackerGroupsList', 'newMoneyBoxe', 'newGroup', 'newTransaction', 'newMoneyTracker', 'home', 'about'];
+var components = ['transactionsList', 'moneyBoxesList', 'moneyTrackersList', 'moneyBoxGroupsList','moneyTrackerGroupsList', 'newMoneyBoxe', 'newGroup', 'newTransaction', 'newMoneyTracker', 'home', 'page404', 'loginOrRegister'];
 
 var i, dependencies = [];
 
