@@ -1,15 +1,13 @@
 let HomeService = function () {
-  const data = {
-    page: 'home',
-    url: '/'
-  };
+  const server_folder = '../../common/server/'
 
-  let loadData = () => {
-    return data;
+  let info = ($http) => {
+    //localhost:3000
+    return $http.get(server_folder + 'home.js');
   };
 
     return {
-        loadData
+        info
     };
 };
 

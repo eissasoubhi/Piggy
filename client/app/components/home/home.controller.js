@@ -1,24 +1,28 @@
 class HomeController {
   constructor(HomeService) {
     'ngInject';
+    this.service = HomeService;
+    this.loading = true;
 
-    this.daily_spendings_rate = 2501;
-    this.daily_spendings_rate_change = 4;
-    this.weekly_spendings_rate = 123.50;
-    this.weekly_spendings_rate_change = 30;
-    this.mounthly_spendings_rate = 2500;
-    this.mounthly_incomes_rate = 4567;
-    this.mounthly_incomes_rate_change = 120;
-    this.mounthly_savings_rate = 2315;
-    this.mounthly_savings_rate_change = 43;
-    this.balance = 7325 ;
-    this.balance_change = 340 ;
-    this.cash_flow_data = {
-        incomes : [31, 74, 6, 39, 20, 85, 7, 89, 19, 66, 9, 99],
-        outcomes : [82, 23, 66, 9, 99, 4, 2, 45, 78, 39, 20, 85],
-        year: 2016,
-        months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    };
+    this.moneyInfo = function(){
+        this.service.info().success(function(data){
+            this.loading = false;
+
+            this.daily_spendings_rate = data.daily_spendings_rate;
+            this.daily_spendings_rate_change = data.daily_spendings_rate_change;
+            this.weekly_spendings_rate = data.weekly_spendings_rate;
+            this.weekly_spendings_rate_change = data.weekly_spendings_rate_change;
+            this.mounthly_spendings_rate = data.mounthly_spendings_rate;
+            this.mounthly_incomes_rate = data.mounthly_incomes_rate;
+            this.mounthly_incomes_rate_change = data.mounthly_incomes_rate_change;
+            this.mounthly_savings_rate = data.mounthly_savings_rate;
+            this.mounthly_savings_rate_change = data.mounthly_savings_rate_change;
+            this.balance = data.balance;
+            this.balance_change = data.balance_change;
+            this.cash_flow_data = data.cash_flow_data;
+        })
+    }
+
 
     this.incomes_simple_color = "#26B99A";
     this.outcomes_simple_color = "#03586A";
