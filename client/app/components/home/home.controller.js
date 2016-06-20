@@ -1,5 +1,6 @@
 class HomeController {
-  constructor() {
+  constructor(HomeService) {
+    'ngInject';
 
     this.daily_spendings_rate = 2501;
     this.daily_spendings_rate_change = 4;
