@@ -19,5 +19,10 @@ var app = angular.module('app', [
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
 
-  .component('app', AppComponent);
+  .component('app', AppComponent)
+
+  .constant('config', {
+      serverHost: 'http://localhost:3000/',
+      serverFolder: 'app/common/server/'
+  });
 

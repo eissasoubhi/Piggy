@@ -78,7 +78,7 @@
                 </div>
                 <div class="x_content">
                     <!-- {{vm | json }} -->
-                    <canvas id="lineChart" chart="{{vm.cash_flow_linechart}}" height="70" ></canvas>
+                    <canvas id="lineChart" chart="{{vm.cash_flow_linechart}}" ng-if="!vm.loading"  height="70" ></canvas>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -107,7 +107,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <canvas id="mybarChart" chart="{{vm.cash_flow_barchart}}" height="70"></canvas>
+                    <canvas id="mybarChart" chart="{{vm.cash_flow_barchart}}" ng-if="!vm.loading" height="70"></canvas>
                 </div>
             </div>
         </div>

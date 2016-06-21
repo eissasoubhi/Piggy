@@ -1,14 +1,13 @@
-let HomeService = function () {
-  const server_folder = '../../common/server/'
+class HomeService {
 
-  let info = ($http) => {
-    //localhost:3000
-    return $http.get(server_folder + 'home.js');
-  };
+  constructor($http, config) {
+    "ngInject";
+    this.http = $http;
+    this.config = config;
+  }
 
-    return {
-        info
-    };
-};
-
+  info() {
+    return this.http.get(this.config.serverHost + this.config.serverFolder + 'home.js');
+  }
+}
 export default HomeService;
