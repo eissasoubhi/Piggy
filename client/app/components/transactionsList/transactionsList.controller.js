@@ -1,7 +1,6 @@
 class TransactionsListController {
   constructor() {
     this.items_count = 20;
-    this.selected_class = 'even';
 
     this.items = [
         {
@@ -66,21 +65,6 @@ class TransactionsListController {
                                     "sSwfPath": "app/assets/js/datatables/tools/swf/copy_csv_xls_pdf.swf"
                                 }
                             };
-  }
-
-  toggleClass()
-  {
-    if(this.selected_class == 'even')
-    {
-        this.selected_class = 'odd';
-    }
-    else
-    {
-        this.selected_class = 'even';
-    }
-
-
-    return this.selected_class
   }
 }
 
