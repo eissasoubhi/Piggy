@@ -7,8 +7,9 @@
     import 'chart.js';
     import './../../assets/js/custom.js';
     import 'datatables';
+    import 'angular-datatables';
     import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
     import 'select2/dist/js/select2.full.min.js';
     import './../../assets/css/select/select2.min.css';
-    import './../../assets/js/autocomplete/countries.js';
+    // import './../../assets/js/autocomplete/countries.js';
     import 'devbridge-autocomplete';

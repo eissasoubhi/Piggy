@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import transactionsListComponent from './transactionsList.component';
+import transactionsListService from './transactionsList.service';
 
 let transactionsListModule = angular.module('transactionsList', [
   uiRouter
@@ -18,6 +19,6 @@ let transactionsListModule = angular.module('transactionsList', [
     });
 })
 
-.component('transactionsList', transactionsListComponent);
-
+.component('transactionsList', transactionsListComponent)
+.service('TransactionsListService', transactionsListService);
 export default transactionsListModule;
