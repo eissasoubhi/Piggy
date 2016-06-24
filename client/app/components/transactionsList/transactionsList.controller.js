@@ -1,4 +1,5 @@
 class TransactionsListController {
+<<<<<<< HEAD
     constructor(TransactionsListService) {
         'ngInject';
         this.service = TransactionsListService;
