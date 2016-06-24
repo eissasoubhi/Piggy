@@ -10,7 +10,7 @@ class HomeController {
         this.outcomes_border_color = "rgba(3, 88, 106, 0.70)" ;
         this.outcomes_background_color = "rgba(3, 88, 106, 0.3)" ;
 
-
+        this.moneyInfo();
     }
 
     moneyInfo(){

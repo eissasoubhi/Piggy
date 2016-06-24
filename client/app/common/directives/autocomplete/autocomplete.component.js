@@ -6,6 +6,7 @@ let autocompleteComponent = function ()
             {
                 var data = scope.$eval(attrs.autocomplete);
                 var append_to = attrs.append_to;
+
                 $(element).autocomplete({
                     lookup: data,
                     appendTo: append_to

@@ -815,6 +815,17 @@ li.current-page a {
     margin-top: 10px;
 }
 
+.main_search .top_search .search-group{
+    background-color: #FFF;
+    box-shadow: 0px 0px 0px 2px #ededed inset;
+    padding-bottom: 1px;
+    border-radius: 25px;
+}
+
+.main_search .go-search{
+    margin-right: 0;
+}
+
 @media (max-width: 1190px){
     .main_search {
         width: 100%;
