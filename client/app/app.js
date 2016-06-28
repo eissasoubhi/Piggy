@@ -9,7 +9,8 @@ import 'normalize.css';
 var app = angular.module('app', [
     uiRouter,
     Common.name,
-    Components.name
+    Components.name,
+    'ui.bootstrap'
   ])
   .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";
