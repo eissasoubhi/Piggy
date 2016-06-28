@@ -10,7 +10,5 @@
     import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
     import 'select2/dist/js/select2.full.min.js';
     import './../../assets/css/select/select2.min.css';
-    import 'ui-select';
-    import 'angular-sanitize';
-    // import './../../assets/js/autocomplete/countries.js';
+    import 'angular-ui-bootstrap';
     import 'devbridge-autocomplete';

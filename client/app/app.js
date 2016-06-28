@@ -11,7 +11,8 @@ var app = angular.module('app', [
     Common.name,
     Components.name,
     'ui.select',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.bootstrap'
   ])
   .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";
