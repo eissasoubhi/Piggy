@@ -9,7 +9,9 @@ import 'normalize.css';
 var app = angular.module('app', [
     uiRouter,
     Common.name,
-    Components.name
+    Components.name,
+    'ui.select',
+    'ngSanitize'
   ])
   .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";
@@ -26,3 +28,4 @@ var app = angular.module('app', [
       serverFolder: 'app/common/server/'
   });
 
+// log(angular.module('ui.select', ['ngSanitize']))

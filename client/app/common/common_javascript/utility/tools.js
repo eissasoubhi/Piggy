@@ -1,5 +1,6 @@
 window.logcount = 0;
 window.errorcount = 0;
+window.infocount = 0;
 window.log = function ()
 {
     logcount++;
@@ -37,6 +38,27 @@ window.error = function ()
             for (var i = 1; i < arguments.length; i++)
             {
                 console.error(arguments[i]);
+            }
+            console.groupEnd();
+    }
+}
+
+window.info = function ()
+{
+    infocount++;
+    switch(arguments.length)
+    {
+        case 0:
+            console.info(infocount);
+            break;
+        case 1:
+            console.info(arguments[0]);
+            break;
+        default:
+            console.group("info"+infocount+" : '%s'", arguments[0]);
+            for (var i = 1; i < arguments.length; i++)
+            {
+                console.info(arguments[i]);
             }
             console.groupEnd();
     }
