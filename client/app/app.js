@@ -10,8 +10,6 @@ var app = angular.module('app', [
     uiRouter,
     Common.name,
     Components.name,
-    'ui.select',
-    'ngSanitize',
     'ui.bootstrap'
   ])
   .config(($locationProvider, $urlRouterProvider) => {

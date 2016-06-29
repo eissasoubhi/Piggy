@@ -6413,3 +6413,6 @@ ul.notifications {
 .square.graph-key-name{
     margin-right: 20px;
 }
+.select2-container--default .select2-results__option[aria-disabled=true]{
+    color: #ccc;
+}

@@ -7,11 +7,15 @@ class NewTransactionController {
         this.all_loaded = 3;
         this.money_boxes = [];
         this.money_trackers = [];
-        this.schedule = [];
-        this.every = 1;
+        this.schedule_every_array = [];
+        this.schedule_every = 1;
         self = this;
         this.loadInfo();
         this.setScheduleArray();
+        this.schedule_loop_selected;
+        this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
+                              {'text': 'week(s)', 'value': 'week', 'enabled': true},
+                              {'text': 'day(s)', 'value': 'day', 'enabled': true}];
 
     }
 
@@ -46,8 +50,25 @@ class NewTransactionController {
     setScheduleArray()
     {
         for (var i = 1; i <= 30; i++) {
-            this.schedule.push(i)
+            this.schedule_every_array.push(i)
         };
+    }
+
+    validateScheduleLoop()
+    {
+        if(this.schedule_every > 12 )
+        {
+            for (var i = 0; i < this.schedule_loop.length; i++) {
+                if(this.schedule_loop[i].value == 'month')
+                {
+                    this.schedule_loop[i].enabled = false;
+                }
+            };
+        }
+        else
+        {
+
+        }
     }
 }
 
