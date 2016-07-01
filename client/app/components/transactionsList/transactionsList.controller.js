@@ -26,7 +26,8 @@ class TransactionsListController {
     this.transactions();
     }
 
-    transactions(){
+    transactions()
+    {
         var self = this;
         this.service.transactions().success(function(data){
             self.items = data
