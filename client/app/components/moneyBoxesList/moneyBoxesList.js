@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import moneyBoxesListComponent from './moneyBoxesList.component';
-
+import moneyBoxesListService from './moneyBoxesList.service';
 let moneyBoxesListModule = angular.module('moneyBoxesList', [
   uiRouter
 ])
@@ -18,6 +18,7 @@ let moneyBoxesListModule = angular.module('moneyBoxesList', [
     });
 })
 
-.component('moneyBoxesList', moneyBoxesListComponent);
+.component('moneyBoxesList', moneyBoxesListComponent)
+.service('MoneyBoxesListService', moneyBoxesListService);
 
 export default moneyBoxesListModule;
