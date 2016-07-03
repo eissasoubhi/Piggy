@@ -26,5 +26,3 @@ var app = angular.module('app', [
       serverHost: 'http://localhost:3000/',
       serverFolder: 'app/common/server/'
   });
-
-// log(angular.module('ui.select', ['ngSanitize']))

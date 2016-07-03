@@ -12,9 +12,11 @@ let select2Component = function ($parse)
                 setTimeout(function () {
                     var model = $parse(attrs.select2);
                     var data = scope.$eval(attrs.options);
+
                     $(element).select2(data);
                     $(element).hide();
                     var _scope = scope;
+
                     if(attrs.select2)
                     {
                         $(element).on('select2:select', function (evt) {

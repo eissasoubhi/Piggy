@@ -9,14 +9,17 @@ class NewTransactionController {
         this.money_trackers = [];
         this.schedule_every_array = [];
         this.schedule_every = 1;
-        self = this;
         this.loadInfo();
         this.setScheduleArray();
         this.schedule_loop_selected;
         this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
                               {'text': 'week(s)', 'value': 'week', 'enabled': true},
                               {'text': 'day(s)', 'value': 'day', 'enabled': true}];
-
+        // var self = this;
+        // setInterval(function  () {
+        //     self.schedule_loop[0].enabled = !self.schedule_loop[0].enabled;
+        //     log(self.schedule_loop[0].enabled )
+        // }, 1000)
     }
 
     loadInfo(){
