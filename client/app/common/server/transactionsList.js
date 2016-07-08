@@ -1,6 +1,6 @@
 [
     {
-        "from": "Bank account",
+        "from": ["Bank account"],
         "to": ["Wallet"],
         "amount": "$150",
         "scheduled": false,
@@ -9,7 +9,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "from": "Bank account",
+        "from": ["Bank account"],
         "to": ["Home", "House stuff", "House Rent"],
         "amount": "$530",
         "scheduled": "Every month",
@@ -18,7 +18,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "from": "Wallet",
+        "from": ["Wallet"],
         "to": ["Home", "Tech stuff", "Phone"],
         "amount": "$100",
         "scheduled": false,
@@ -27,7 +27,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "from": "Bank account",
+        "from": ["Bank account"],
         "to": ["Home", "House stuff", "House gas"],
         "amount": "$10",
         "scheduled": "Every month",
@@ -36,7 +36,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "from": "Bank account",
+        "from": ["Bank account"],
         "to": ["Home", "House stuff", "House electricity"],
         "amount": "$15",
         "scheduled": "Every month",

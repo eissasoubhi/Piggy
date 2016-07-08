@@ -24,17 +24,12 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">From <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="select2_group form-control" required="required" select2>
+                                    <select class="select2_group form-control" required="required" select2  >
                                         <optgroup label="Money Boxes">
-                                            <option value="Bank account">Bank account</option>
-                                            <option selected value="Wallet">Wallet</option>
+                                            <option ng-repeat="mb in vm.money_boxes" value=" {{ mb.name }} "> {{ mb.name }} </option>
                                         </optgroup>
                                         <optgroup label="Money Trackers">
-                                            <option value="Books">Books</option>
-                                            <option value="Traveling">Traveling</option>
-                                            <option value="Clothes">Clothes</option>
-                                            <option value="Phone">Phone</option>
-                                            <option value="Computer">Computer</option>
+                                            <option ng-repeat="mt in vm.money_trackers" value=" {{ mt.name }} " > {{ mt.name }} </option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -46,49 +41,44 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <select class="select2_group form-control" required="required" select2>
                                         <optgroup label="Money Boxes">
-                                            <option value="Bank account">Bank account</option>
-                                            <option value="Wallet">Wallet</option>
+                                            <option ng-repeat="mb in vm.money_boxes" value=" {{ mb.name }} "> {{ mb.name }} </option>
                                         </optgroup>
                                         <optgroup label="Money Trackers">
-                                            <option selected value="Books">Books</option>
-                                            <option value="Traveling">Traveling</option>
-                                            <option value="Clothes">Clothes</option>
-                                            <option value="Phone">Phone</option>
-                                            <option value="Computer">Computer</option>
+                                            <option ng-repeat="mt in vm.money_trackers" value=" {{ mt.name }} " > {{ mt.name }} </option>
                                         </optgroup>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Every </label>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <select class="select2_group form-control" required="required" select2>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                <div class="col-md-1 col-sm-1 col-xs-12">
+                                    <select class="form-control" select-change="vm.validateScheduleLoop()"  select2="vm.schedule_every" ng-model="vm.schedule_every"
+                                    ng-options="schedule for schedule in vm.schedule_every_array track by  0+''+schedule" >
                                     </select>
+                                    {{ vm.schedule_every }}
                                 </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <select class="select2_group form-control" required="required" select2>
-                                        <option value="month">month(s)</option>
-                                        <option value="week">week(s)</option>
-                                        <option value="day">day(s)</option>
+                                <div class="col-md-1 col-sm-1 col-xs-12">
+                                    <select class="form-control" required="required" select2="vm.schedule_loop_selected" ng-model="vm.schedule_loop_selected">
+                                        <option select2option="loop.enabled" ng-disabled="!loop.enabled" ng-repeat="loop in vm.schedule_loop" value="{{loop.value}}">{{ loop.text }}</option>
                                     </select>
+                                    {{ vm.schedule_loop_selected }}
                                 </div>
-                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
                                     <div class="row">
                                         <label class="control-label col-md-2 col-sm-2 col-xs-12">On </label>
-                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
                                             <select class="select2_group form-control" required="required" select2>
-                                                <option value="1">1 </option>
-                                                <option value="2">2 </option>
-                                                <option value="3">3 </option>
+                                                <option value="1">Monday </option>
+                                                <option value="2">Tuesday </option>
+                                                <option value="3">Wednesday </option>
+                                                <option value="3">Thursday </option>
+                                                <option value="3">Friday </option>
+                                                <option value="3">Saturday </option>
+                                                <option value="3">Sunday </option>
                                             </select>
                                         </div>
                                         <label class="control-label col-md-2 col-sm-2 col-xs-12">At </label>
-                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select class="select2_group form-control" required="required" select2>
                                                 <option value="1">1 </option>
                                                 <option value="2">2 </option>
