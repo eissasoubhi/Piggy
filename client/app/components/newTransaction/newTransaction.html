@@ -52,13 +52,15 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Every </label>
                                 <div class="col-md-1 col-sm-1 col-xs-12">
-                                    <select class="form-control" select-change="vm.validateScheduleLoop()"  select2="vm.schedule_every" ng-model="vm.schedule_every"
-                                    ng-options="schedule for schedule in vm.schedule_every_array track by  0+''+schedule" >
+                                    <select class="form-control schedule_every" select-change="vm.validateScheduleLoop()"  select2="vm.schedule_every" byText>
+                                        <option  ng-repeat="schedule in vm.schedule_every_array" value="{{0+''+schedule}}">{{ schedule }}</option>
                                     </select>
                                     {{ vm.schedule_every }}
+                                    <input type="" name="" ng-model="vm.schedule_every">
                                 </div>
                                 <div class="col-md-1 col-sm-1 col-xs-12">
-                                    <select class="form-control" required="required" select2="vm.schedule_loop_selected" ng-model="vm.schedule_loop_selected">
+                                 <!-- select2="vm.schedule_loop_selected"  -->
+                                    <select class="form-control" required="required" ng-model="vm.schedule_loop_selected">
                                         <option select2option="loop.enabled" ng-disabled="!loop.enabled" ng-repeat="loop in vm.schedule_loop" value="{{loop.value}}">{{ loop.text }}</option>
                                     </select>
                                     {{ vm.schedule_loop_selected }}
