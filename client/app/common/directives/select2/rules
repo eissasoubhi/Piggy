@@ -1,0 +1,4 @@
+every > 12 : months disabled
+months : on = days numbers
+weeks : on = days names
+weeks : on disabled
