@@ -53,10 +53,10 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Every </label>
                                 <div class="col-md-1 col-sm-1 col-xs-12">
                                     <select class="select2_group form-control every" select-change="vm.validateScheduleLoop()"  select2="vm.schedule_every" ng-model="vm.schedule_every"
-                                    ng-options="schedule for schedule in vm.schedule_every_array track by schedule" >
+                                    ng-options="schedule for schedule in vm.schedule_every_array track by schedule+''+0" >
                                     </select>
-                                    {{vm.schedule_loop}}
-                                    <input type="text" ng-model="vm.schedule_loop[0].enabled" ng-value="" placeholder="">
+                                    {{vm.schedule_every}}
+                                    <input type="text" ng-model="vm.schedule_every" ng-value="" placeholder="">
                                 </div>
                                 <div class="col-md-1 col-sm-1 col-xs-12">
                                     <select class="select2_group form-control schedule_loop_selected" required="required" select2="vm.schedule_loop_selected">
