@@ -11,10 +11,10 @@ class NewTransactionController {
         this.schedule_every = 1;
         this.loadInfo();
         this.setScheduleArray();
-        this.schedule_loop_selected;
         this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
                               {'text': 'week(s)', 'value': 'week', 'enabled': true},
                               {'text': 'day(s)', 'value': 'day', 'enabled': true}];
+        this.schedule_loop_selected = this.schedule_loop[1].value;
         // var self = this;
         // setInterval(function  () {
         //     self.schedule_loop[0].enabled = !self.schedule_loop[0].enabled;
@@ -61,17 +61,22 @@ class NewTransactionController {
     {
         if(this.schedule_every > 12 )
         {
-            for (var i = 0; i < this.schedule_loop.length; i++) {
-                if(this.schedule_loop[i].value == 'month')
-                {
-                    this.schedule_loop[i].enabled = false;
-                }
-            };
+            this.enableScheduleLoop('month', false);
         }
         else
         {
-
+            this.enableScheduleLoop('month', true);
         }
+    }
+
+    enableScheduleLoop(loop_name, enable = true)
+    {
+        for (var i = 0; i < this.schedule_loop.length; i++) {
+            if(this.schedule_loop[i].value == loop_name)
+            {
+                this.schedule_loop[i].enabled = enable;
+            }
+        };
     }
 }
 
