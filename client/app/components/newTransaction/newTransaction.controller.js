@@ -4,22 +4,32 @@ class NewTransactionController {
         this.service = NewTransactionService;
         this.completed_loading = 0;
         this.loading = true;
+        this.disable_days = false;
         this.all_loaded = 3;
         this.money_boxes = [];
         this.money_trackers = [];
         this.schedule_every_array = [];
+        this.days_numbers = [];
+        this.times = [];
         this.schedule_every = 1;
         this.loadInfo();
         this.setScheduleArray();
+        this.setDaysNumbersArray();
+        this.setTimesArray();
+        this.schedule_time = this.times[0].value;
         this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
                               {'text': 'week(s)', 'value': 'week', 'enabled': true},
                               {'text': 'day(s)', 'value': 'day', 'enabled': true}];
-        this.schedule_loop_selected = this.schedule_loop[1].value;
-        // var self = this;
-        // setInterval(function  () {
-        //     self.schedule_loop[0].enabled = !self.schedule_loop[0].enabled;
-        //     log(self.schedule_loop[0].enabled )
-        // }, 1000)
+        this.schedule_loop_selected = this.schedule_loop[0].value;
+        this.days_names = [{'text': 'Sunday', 'value': 'sunday'},
+                            {'text': 'Monday', 'value': 'monday'},
+                            {'text': 'Tuesday', 'value': 'tuesday'},
+                            {'text': 'Wednesday', 'value': 'wednesday'},
+                            {'text': 'Thursday', 'value': 'thursday'},
+                            {'text': 'Friday', 'value': 'friday'},
+                            {'text': 'Saturday', 'value': 'saturday'}];
+
+        this.days = this.days_numbers;
     }
 
     loadInfo(){
@@ -57,6 +67,28 @@ class NewTransactionController {
         };
     }
 
+    setTimesArray()
+    {
+        var time_format;
+        for (var i = 0; i <= 23; i++) {
+            time_format = i > 9 ? "" + i: "0" + i;
+            this.times.push({
+                'value': time_format,
+                'text': time_format + ':00'
+            })
+        };
+    }
+
+    setDaysNumbersArray()
+    {
+        for (var i = 1; i <= 31; i++) {
+            this.days_numbers.push({
+                'value': i,
+                'text': i+' th'
+            })
+        };
+    }
+
     validateScheduleLoop()
     {
         if(this.schedule_every > 12 )
@@ -77,6 +109,25 @@ class NewTransactionController {
                 this.schedule_loop[i].enabled = enable;
             }
         };
+    }
+
+    daysFormat()
+    {
+        this.disable_days = false;
+
+        if(this.schedule_loop_selected == 'month')
+        {
+            this.days = this.days_numbers;
+        }
+        else
+        {
+            if(this.schedule_loop_selected == 'day')
+            {
+                this.disable_days = true
+            }
+
+            this.days = this.days_names;
+        }
     }
 }
 

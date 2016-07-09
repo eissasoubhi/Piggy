@@ -14,6 +14,7 @@ let select2optionComponent = function ($parse, $compile)
 
                         select.val(value);
                         select.select2(data);
+                        select.change();
                     }, 0)
                 })
             }

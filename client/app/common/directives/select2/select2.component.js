@@ -12,15 +12,16 @@ let select2Component = function ($parse)
                 setTimeout(function () {
                     var model = $parse(attrs.select2);
                     var data = scope.$eval(attrs.options);
-                    var bytext = typeof attrs.bytext == "undefined" ? false : true ;
+                    var bytext = typeof attrs.selectBytext == "undefined" ? false : true ;
 
                     $(element).select2(data);
-                    // $(element).hide();
+                    $(element).hide();
                     var _scope = scope;
 
                     if(attrs.select2)
                     {
                         $(element).on('select2:select', function (evt) {
+                            // log($(this).val())
                             scope.$apply(function(){
                                 if(bytext)
                                 {
@@ -28,17 +29,37 @@ let select2Component = function ($parse)
                                 }
                                 else
                                 {
-                                    model.assign(scope.$parent, evt.params.data.id);
+                                    model.assign(scope.$parent, evt.params.data.id );
                                 }
 
                                 scope.$parent.refresh_modal = false;
                             });
                         });
 
-                        // log('scope', scope)
+                        $(element).on('change', function (evt) {
+                            var select = $(this)
+                            var val = select.val()
+
+                            setTimeout(function  () {
+                                 scope.$apply(function(){
+                                    if(bytext)
+                                    {
+                                        var text = select.find('option[value="' + val + '"]').text()
+                                        model.assign(scope.$parent, text);
+                                    }
+                                    else
+                                    {
+                                        model.assign(scope.$parent, val );
+                                    }
+
+                                    scope.$parent.refresh_modal = false;
+                                });
+                            }, 0)
+                        });
+
                         scope.$parent.$watch(model, function(newValue, oldValue, scope) {
                             var refresh = typeof scope.refresh_modal == 'undefined' ? true : scope.refresh_modal;
-                            log('refresh', refresh)
+
                             if(refresh)
                             {
                                 var selected_value = newValue;
