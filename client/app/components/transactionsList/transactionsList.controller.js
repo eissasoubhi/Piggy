@@ -5,6 +5,7 @@ class TransactionsListController {
         this.loading = true;
         this.items_count = 0;
         this.items = [];
+        this.test = 'eissa ok';
         this.modal = $uibModal;
 
         this.datatables_options = {
@@ -41,8 +42,8 @@ class TransactionsListController {
         // https://angular-ui.github.io/bootstrap/#/modal
         var modalInstance = this.modal.open({
         animation: true,
-        template: '<div class="modal-header"> <h3 class="modal-title">I\'m a modal!</h3> </div> <div class="modal-body"> <ul> <li ng-repeat="item in items"> <a href="#" ng-click="$event.preventDefault();"></a> </li> </ul> Selected: <b> selected.item</b> </div> <div class="modal-footer"> <button class="btn btn-primary" type="button" ng-click="">OK</button> <button class="btn btn-warning" type="button" ng-click="">Cancel</button> </div>',
-        // controller: 'ModalInstanceCtrl',
+        templateUrl: 'myModalContent.html',
+        controller: 'TransactionsListController',
         size: 'lg',
         resolve: {
         /*items: function () {
