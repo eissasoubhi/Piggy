@@ -10,7 +10,8 @@ var app = angular.module('app', [
     uiRouter,
     Common.name,
     Components.name,
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMaterial'
   ])
   .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";

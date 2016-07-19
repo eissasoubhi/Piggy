@@ -11,4 +11,6 @@
     import 'select2/dist/js/select2.full.min.js';
     import './../../assets/css/select/select2.min.css';
     import 'angular-ui-bootstrap';
+    import 'angular-material';
+    import 'angular-material/angular-material.css';
     import 'devbridge-autocomplete';
