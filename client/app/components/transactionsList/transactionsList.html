@@ -11,6 +11,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
+                        <!-- <pre id="default-spacing">{{ vm | json }}</pre> -->
                         <table id="example"    class="table table-striped responsive-utilities jambo_table">
                             <thead>
                                 <tr class="headings">
@@ -63,30 +64,7 @@
     <!-- footer content -->
     <page-footer></page-footer>
     <!-- /footer content -->
-    <script type="text/ng-template" id="myModalContent0.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
-        </div>
-        <div class="modal-body">
-            {{vm.test}}
-            {{vm | json}}
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="vm.go()" >OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Im a modal!</h3>
-        </div>
-        <div class="modal-body">
-            {{test}}
-            {{vm | json}}
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()" >OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
+    <!-- <script type="text/ng-template" id="myModalContent">
+    <div ng-include="transactionsList.edit.modal.html" ></div>
+    </script> -->
 </div>

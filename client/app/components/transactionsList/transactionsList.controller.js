@@ -1,13 +1,13 @@
+import transactionsList_edit from './transactionsList.edit.modal.html';
 class TransactionsListController {
-    constructor(TransactionsListService, $uibModal, $mdDialog) {
+    constructor(TransactionsListService, $uibModal) {
         'ngInject';
         this.service = TransactionsListService;
         this.loading = true;
         this.items_count = 0;
         this.items = [];
-        this.test = 'eissa ok';
-        this.modal0 = $uibModal;
-        this.modal = $mdDialog;
+        this.test = 'component : test1 ';
+        this.modal = $uibModal;
         this.datatables_options = {
                                     "oLanguage": {
                                         "sSearch": "Search all columns:"
@@ -25,6 +25,7 @@ class TransactionsListController {
                                     }
                                 };
     this.transactions();
+    log('this', this.__proto__)
     }
 
     transactions()
@@ -39,54 +40,23 @@ class TransactionsListController {
 
     edit(ev)
     {
-        // https://angular-ui.github.io/bootstrap/#/modal
         var ctrl = this;
-        var modalInstance = this.modal0.open({
+        var modalInstance = this.modal.open({
         animation: true,
-        templateUrl: 'myModalContent0.html',
+        template: transactionsList_edit,
         controller : function() {
-            $.extend(true, this, ctrl);
-            this.test  = 'eissa me'
-            this.go = function  () {
-                alert('hiiiiiii')
-            }
+            this.__proto__ = ctrl;
         },
         controllerAs: 'vm',
         size: 'lg',
         });
 
-        // var modal = this.modal;
-        // modal.show({
-        //     controller: function ($scope, $mdDialog) {
-        //         'ngInject';
-        //         $scope.test = 'test me';
-        //         $scope.ok = function () {
-        //             alert('ok')
-        //         }
-        //         $scope.hide = function() {
-        //             $mdDialog.hide();
-        //         };
-        //         $scope.cancel = function() {
-        //             $mdDialog.cancel();
-        //         };
-        //         $scope.answer = function(answer) {
-        //             $mdDialog.hide(answer);
-        //         };
-        //     },
-        //     templateUrl: 'myModalContent.html',
-        //     parent: angular.element(document.body),
-        //     targetEvent: ev,
-        //     clickOutsideToClose:true,
-        //     fullscreen: true
-        // });
-
     }
 
     ok()
     {
-        alert('ok')
+        alert('ok then')
     }
-
 }
 
 export default TransactionsListController;
