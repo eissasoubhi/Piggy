@@ -24,12 +24,12 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">From <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="select2_group form-control" required="required" select2  >
+                                    <select class="select2_group form-control" required="required" select2  data-options="vm.options">
                                         <optgroup label="Money Boxes">
-                                            <option ng-repeat="mb in vm.money_boxes" value=" {{ mb.name }} "> {{ mb.name }} </option>
+                                            <option ng-repeat="mb in vm.money_boxes" breadcrumbs="{{ mb.path }}" data-type="{{ mb.type }}" data-arrow=">" value=" {{ mb.id }} "></option>
                                         </optgroup>
                                         <optgroup label="Money Trackers">
-                                            <option ng-repeat="mt in vm.money_trackers" value=" {{ mt.name }} " > {{ mt.name }} </option>
+                                            <option ng-repeat="mt in vm.money_trackers" breadcrumbs="{{ mt.path }}" data-type="{{ mt.type }}" data-arrow=">" value=" {{ mt.id }} "></option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -39,12 +39,12 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">To <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="select2_group form-control" required="required" select2>
+                                    <select class="select2_group form-control" required="required" select2 data-options="vm.options">
                                         <optgroup label="Money Boxes">
-                                            <option ng-repeat="mb in vm.money_boxes" value=" {{ mb.name }} "> {{ mb.name }} </option>
+                                            <option ng-repeat="mb in vm.money_boxes" breadcrumbs="{{ mb.path }}" data-type="{{ mb.type }}" data-arrow=">" value=" {{ mb.id }} "></option>
                                         </optgroup>
                                         <optgroup label="Money Trackers">
-                                            <option ng-repeat="mt in vm.money_trackers" value=" {{ mt.name }} " > {{ mt.name }} </option>
+                                            <option ng-repeat="mt in vm.money_trackers" breadcrumbs="{{ mt.path }}" data-type="{{ mt.type }}" data-arrow=">" value=" {{ mt.id }} "></option>
                                         </optgroup>
                                     </select>
                                 </div>

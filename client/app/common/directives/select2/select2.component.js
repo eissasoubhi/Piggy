@@ -4,14 +4,15 @@ let select2Component = function ($parse)
     return{
         restrict: 'A',
         scope: {
-            selectChange: '&'
+            selectChange: '&',
+            options: '&'
         },
         link: function(scope, element, attrs)
             {
 
                 setTimeout(function () {
                     var model = $parse(attrs.select2);
-                    var data = scope.$eval(attrs.options);
+                    var data = scope.$eval(scope.options);
                     var bytext = typeof attrs.selectBytext == "undefined" ? false : true ;
 
                     $(element).select2(data);

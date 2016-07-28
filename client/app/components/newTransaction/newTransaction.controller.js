@@ -30,6 +30,23 @@ class NewTransactionController {
                             {'text': 'Saturday', 'value': 'saturday'}];
 
         this.days = this.days_numbers;
+        this.options = {
+                    templateResult: function (option)
+                    {
+                        function hightlight(path) {
+                            var paths = path.split('>');
+                            paths[paths.length - 1] = '<strong>' + paths[paths.length - 1] + '</strong>';
+                            return paths.join('>');
+                        }
+                        if($(option.element).data('type'))
+                        {
+                            var type = $(option.element).data('type');
+                            return $('<div>' + hightlight(option.text) + '<span class="m_type">' + type + '</span></div>');
+                        }
+
+                        return $('<div>' + hightlight(option.text) + '</div>');
+                    }
+                };
     }
 
     loadInfo(){

@@ -7,7 +7,7 @@ class MoneyBoxesListService {
   }
 
   moneyBoxes() {
-    return this.http.get(this.config.serverHost + this.config.serverFolder + 'moneyBoxesList.js');
+    return this.http.get(this.config.serverHost + this.config.serverFolder + 'moneyBoxesListWithGroups.js');
   }
 }
 export default MoneyBoxesListService;

@@ -7,9 +7,10 @@ let breadcrumbsComponent = function ()
                 var data = scope.$eval(attrs.breadcrumbs) ;
                 var breadcrumbs;
                 var arrow = attrs.arrow ? attrs.arrow : '<i class="fa fa-angle-right"></i> ';
+                // log(data && typeof data.join == "function")
                 if(data && typeof data.join == "function")
                 {
-                    breadcrumbs = data.join(' ' + arrow + '');
+                    breadcrumbs = data.join(' ' + arrow + ' ');
                 }
                 else
                 {

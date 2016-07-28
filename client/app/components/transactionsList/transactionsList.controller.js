@@ -1,12 +1,17 @@
 import transactionsList_edit from './transactionsList.edit.modal.html';
 class TransactionsListController {
-    constructor(TransactionsListService, $uibModal) {
+    constructor(TransactionsListService, $uibModal, NewTransactionService) {
         'ngInject';
         this.service = TransactionsListService;
+        this.new_tran_service = NewTransactionService;
         this.loading = true;
         this.items_count = 0;
+        this.money_boxes = [];
+        this.money_trackers = [];
+        this.days_numbers = [];
+        this.schedule_every_array = [];
         this.items = [];
-        this.test = 'component : test1 ';
+        this.times = [];
         this.modal = $uibModal;
         this.datatables_options = {
                                     "oLanguage": {
@@ -24,8 +29,25 @@ class TransactionsListController {
                                         "sSwfPath": "app/assets/js/datatables/tools/swf/copy_csv_xls_pdf.swf"
                                     }
                                 };
-    this.transactions();
-    log('this', this.__proto__)
+        this.loadInfo();
+        this.setScheduleArray();
+        this.setDaysNumbersArray();
+        this.setTimesArray();
+        this.schedule_time = this.times[0].value;
+        this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
+                              {'text': 'week(s)', 'value': 'week', 'enabled': true},
+                              {'text': 'day(s)', 'value': 'day', 'enabled': true}];
+        this.schedule_loop_selected = this.schedule_loop[0].value;
+        this.days_names = [{'text': 'Sunday', 'value': 'sunday'},
+                            {'text': 'Monday', 'value': 'monday'},
+                            {'text': 'Tuesday', 'value': 'tuesday'},
+                            {'text': 'Wednesday', 'value': 'wednesday'},
+                            {'text': 'Thursday', 'value': 'thursday'},
+                            {'text': 'Friday', 'value': 'friday'},
+                            {'text': 'Saturday', 'value': 'saturday'}];
+
+        this.days = this.days_numbers;
+        this.transactions();
     }
 
     transactions()
@@ -38,7 +60,7 @@ class TransactionsListController {
         })
     }
 
-    edit(ev)
+    edit(editing)
     {
         var ctrl = this;
         var modalInstance = this.modal.open({
@@ -46,6 +68,7 @@ class TransactionsListController {
         template: transactionsList_edit,
         controller : function() {
             this.__proto__ = ctrl;
+            this.editing = editing;
         },
         controllerAs: 'vm',
         size: 'lg',
@@ -53,9 +76,43 @@ class TransactionsListController {
 
     }
 
-    ok()
+    loadInfo()
     {
-        alert('ok then')
+        var self = this;
+        this.new_tran_service.moneyBoxes().success(function(money_boxes){
+                self.money_boxes = money_boxes;
+            })
+        this.new_tran_service.moneyTrackers().success(function(money_trackers){
+                self.money_trackers = money_trackers;
+            })
+    }
+    setScheduleArray()
+    {
+        for (var i = 1; i <= 30; i++) {
+            this.schedule_every_array.push(i)
+        };
+    }
+
+    setTimesArray()
+    {
+        var time_format;
+        for (var i = 0; i <= 23; i++) {
+            time_format = i > 9 ? "" + i: "0" + i;
+            this.times.push({
+                'value': time_format,
+                'text': time_format + ':00'
+            })
+        };
+    }
+
+    setDaysNumbersArray()
+    {
+        for (var i = 1; i <= 31; i++) {
+            this.days_numbers.push({
+                'value': i,
+                'text': i+' th'
+            })
+        };
     }
 }
 

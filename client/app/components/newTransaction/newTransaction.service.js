@@ -7,11 +7,11 @@ class NewTransactionService {
     }
 
     moneyTrackers() {
-        return this.http.get(this.config.serverHost + this.config.serverFolder + 'money-trackers.js');
+        return this.http.get(this.config.serverHost + this.config.serverFolder + 'moneyTrackersListWithGroups.js');
     }
 
     moneyBoxes() {
-        return this.http.get(this.config.serverHost + this.config.serverFolder + 'money-boxes.js');
+        return this.http.get(this.config.serverHost + this.config.serverFolder + 'moneyBoxesListWithGroups.js');
     }
 
     info() {

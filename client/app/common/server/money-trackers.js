@@ -1,17 +1,22 @@
 [
     {
-        "name": "Books"
+        "name": "Books",
+        "location": ["Home"]
     },
     {
-        "name": "Traveling"
+        "name": "Traveling",
+        "location": ["Home", "Entertainment"]
     },
     {
-        "name": "Clothes"
+        "name": "Clothes",
+        "location": ["Home"]
     },
     {
-        "name": "Phone"
+        "name": "Phone",
+        "location": ["Home", "Tech stuff"]
     },
     {
-        "name": "Computer"
+        "name": "Computer",
+        "location": ["Home", "Tech stuff"]
     }
 ]

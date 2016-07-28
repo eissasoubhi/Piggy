@@ -1,8 +1,10 @@
 [
     {
-        "name": "Bank account"
+        "name": "Bank account",
+        "location": ""
     },
     {
-        "name": "Wallet"
+        "name": "Wallet",
+        "location": ""
     }
 ]
