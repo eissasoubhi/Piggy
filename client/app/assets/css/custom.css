@@ -6417,8 +6417,7 @@ ul.notifications {
     color: #ccc;
 }
 .m_type{
-    color: #999;
     font-style: italic;
     font-family: serif;
-    padding-left: 10px;
+    padding-right: 10px;
 }

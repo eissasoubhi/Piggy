@@ -16,7 +16,7 @@ let select2Component = function ($parse)
                     var bytext = typeof attrs.selectBytext == "undefined" ? false : true ;
 
                     $(element).select2(data);
-                    $(element).hide();
+                    // $(element).hide();
                     var _scope = scope;
 
                     if(attrs.select2)
