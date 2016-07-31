@@ -38,7 +38,7 @@ class TransactionsListController {
         this.schedule_loop = [{'text': 'month(s)', 'value': 'month', 'enabled': true},
                               {'text': 'week(s)', 'value': 'week', 'enabled': true},
                               {'text': 'day(s)', 'value': 'day', 'enabled': true}];
-        this.schedule_loop_selected = this.schedule_loop[1].value;
+        this.schedule_loop_selected = this.schedule_loop[0].value;
         this.days_names = [{'text': 'Sunday', 'value': 'sunday'},
                             {'text': 'Monday', 'value': 'monday'},
                             {'text': 'Tuesday', 'value': 'tuesday'},
@@ -148,6 +148,47 @@ class TransactionsListController {
                 'value': i,
                 'text': i+' th'
             })
+        };
+    }
+
+    daysFormat()
+    {
+        this.disable_days = false;
+
+        if(this.schedule_loop_selected == 'month')
+        {
+            this.days = this.days_numbers;
+        }
+        else
+        {
+            if(this.schedule_loop_selected == 'day')
+            {
+                this.disable_days = true
+            }
+
+            this.days = this.days_names;
+        }
+    }
+
+    validateScheduleLoop()
+    {
+        if(this.schedule_every > 12 )
+        {
+            this.enableScheduleLoop('month', false);
+        }
+        else
+        {
+            this.enableScheduleLoop('month', true);
+        }
+    }
+
+    enableScheduleLoop(loop_name, enable = true)
+    {
+        for (var i = 0; i < this.schedule_loop.length; i++) {
+            if(this.schedule_loop[i].value == loop_name)
+            {
+                this.schedule_loop[i].enabled = enable;
+            }
         };
     }
 

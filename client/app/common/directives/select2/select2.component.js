@@ -16,7 +16,7 @@ let select2Component = function ($parse)
                     var bytext = typeof attrs.selectBytext == "undefined" ? false : true ;
 
                     $(element).select2(data);
-                    // $(element).hide();
+                    $(element).hide();
                     var _scope = scope;
 
                     if(attrs.select2)
@@ -58,25 +58,33 @@ let select2Component = function ($parse)
                             }, 0)
                         });
 
-                        scope.$parent.$watch(model, function(newValue, oldValue, scope) {
-                            var refresh = typeof scope.refresh_modal == 'undefined' ? true : scope.refresh_modal;
-
-                            if(refresh)
+                        function watchModel ()
+                        {
+                            scope.$parent.$watch(model, function(newValue, oldValue, scope)
                             {
-                                var selected_value = newValue;
-                                if(bytext)
-                                {
-                                    selected_value = $(element).find('option').filter(function () {
-                                                            return $(this).html() == newValue
-                                                        }).val();
-                                }
-                                $(element).val(selected_value)
-                                $(element).change();
-                            }
+                                var refresh = typeof scope.refresh_modal == 'undefined' ? true : scope.refresh_modal;
 
-                            _scope.selectChange()
-                            scope.refresh_modal = true;
-                        });
+                                if(refresh)
+                                {
+                                    var selected_value = newValue;
+                                    if(bytext)
+                                    {
+                                        selected_value = $(element).find('option').filter(function () {
+                                                                return $(this).html() == newValue
+                                                            }).val();
+                                    }
+                                    $(element).val(selected_value)
+                                    $(element).change();
+                                }
+
+                                _scope.selectChange()
+                                scope.refresh_modal = true;
+                            });
+                        }
+                        scope.$apply(function  () {
+                            watchModel();
+                        })
+
                     }
 
                 }, 0)
