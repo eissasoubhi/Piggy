@@ -76,8 +76,11 @@ let select2Component = function ($parse)
                                     $(element).val(selected_value)
                                     $(element).change();
                                 }
+                                if (typeof _scope.selectChange() == 'function')
+                                {
+                                    _scope.selectChange()(element)
+                                }
 
-                                _scope.selectChange()
                                 scope.refresh_modal = true;
                             });
                         }

@@ -192,6 +192,12 @@ class TransactionsListController {
         };
     }
 
+    setAttr( select)
+    {
+        // log('editing', editing)
+        log('select', select)
+        // editing.from =
+    }
 }
 
 export default TransactionsListController;

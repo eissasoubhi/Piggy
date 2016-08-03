@@ -6,8 +6,10 @@
         <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money amount <span class="required">*</span>
             </label>
-            {{vm.schedule_loop_selected}}
-            <input type="text" name="" value="" ng-model="vm.schedule_loop_selected">
+            <pre>
+                {{vm.editing | json}}
+            </pre>
+            <input type="text" name="" value="" ng-model="vm.editing.from">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <input type="text" id="mt-money" ng-model="vm.editing.amount" required="required" class="form-control col-md-7 col-xs-12">
             </div>
@@ -16,7 +18,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">From <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class=" form-control" required="required" select2="vm.editing.from_id"  data-options="vm.options" >
+                <select class=" form-control" required="required" select-change="vm.setAttr" select2="vm.editing.from_id"  data-options="vm.options" >
                     <optgroup label="Money Boxes  ------------------------------------------------">
                         <option ng-repeat="mb in vm.money_boxes" breadcrumbs="{{ mb.path }}" data-type="{{ mb.type }}" data-arrow=">" value=" {{ mb.id }} "></option>
                     </optgroup>
