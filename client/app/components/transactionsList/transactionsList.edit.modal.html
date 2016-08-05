@@ -6,10 +6,6 @@
         <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money amount <span class="required">*</span>
             </label>
-            <pre>
-                {{vm.editing | json}}
-            </pre>
-            <input type="text" name="" value="" ng-model="vm.editing.from">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <input type="text" id="mt-money" ng-model="vm.editing.amount" required="required" class="form-control col-md-7 col-xs-12">
             </div>
@@ -18,7 +14,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">From <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class=" form-control" required="required" select-change="vm.setAttr" select2="vm.editing.from_id"  data-options="vm.options" >
+                <select class=" form-control" required="required"  select-change="vm.setAttrFrom" select2="vm.editing.from_id"  data-options="vm.options" >
                     <optgroup label="Money Boxes  ------------------------------------------------">
                         <option ng-repeat="mb in vm.money_boxes" breadcrumbs="{{ mb.path }}" data-type="{{ mb.type }}" data-arrow=">" value=" {{ mb.id }} "></option>
                     </optgroup>
@@ -33,7 +29,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">To <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <select class=" form-control" required="required" select2 data-options="vm.options">
+                <select class=" form-control" required="required" select-change="vm.setAttrTo" select2="vm.editing.to_id" data-options="vm.options">
                     <optgroup label="Money Boxes ------------------------------------------------">
                         <option ng-repeat="mb in vm.money_boxes" breadcrumbs="{{ mb.path }}" data-type="{{ mb.type }}" data-arrow=">" value=" {{ mb.id }} "></option>
                     </optgroup>
@@ -45,13 +41,14 @@
         </div>
         <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Every </label>
+            {{vm.editing.scheduled}}
             <div class="col-md-1 col-sm-1 col-xs-12">
-                <select class="form-control" select-change="vm.validateScheduleLoop()"  select2="vm.schedule_every" >
+                <select class="form-control" select-change="vm.validateScheduleLoop(vm.editing)"  ng-disabled="!vm.editing.scheduled.every" select2="vm.editing.scheduled.every" >
                     <option  ng-repeat="schedule in vm.schedule_every_array" value="{{schedule}}">{{ schedule }}</option>
                 </select>
             </div>
             <div class="col-md-1 col-sm-1 col-xs-12">
-                <select class="form-control" select-change="vm.daysFormat()" select2="vm.schedule_loop_selected" >
+                <select class="form-control" select-change="vm.daysFormat()" select2="vm.editing.scheduled.period" >
                     <option select2option="loop.enabled" ng-disabled="!loop.enabled" ng-repeat="loop in vm.schedule_loop" value="{{loop.value}}">{{ loop.text }}</option>
                 </select>
             </div>
@@ -59,19 +56,22 @@
                 <div class="row">
                     <label class="control-label col-md-2 col-sm-2 col-xs-12">On </label>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select ng-disabled="vm.disable_days" class=" form-control" required="required" select2>
+                        <select ng-disabled="vm.disable_days" class=" form-control" required="required" select2=vm.editing.scheduled.on>
                             <option ng-repeat="day in vm.days" value="{{day.value}}">{{ day.text }}</option>
                         </select>
                     </div>
                     <label class="control-label col-md-2 col-sm-2 col-xs-12">At </label>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select class="form-control" select2="vm.schedule_time">
+                        <select class="form-control" select2="vm.editing.scheduled.at">
                             <option ng-repeat="time in vm.times" value="{{time.value}}">{{ time.text }}</option>
                         </select>
                     </div>
                 </div>
             </div>
         </div>
+        <pre>
+            {{ vm.editing | json}}
+        </pre>
         <div class="ln_solid"></div>
         <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

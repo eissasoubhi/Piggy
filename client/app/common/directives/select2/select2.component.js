@@ -78,7 +78,7 @@ let select2Component = function ($parse)
                                 }
                                 if (typeof _scope.selectChange() == 'function')
                                 {
-                                    _scope.selectChange()(element)
+                                    _scope.selectChange()($(element), scope);
                                 }
 
                                 scope.refresh_modal = true;

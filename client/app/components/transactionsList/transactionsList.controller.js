@@ -170,8 +170,9 @@ class TransactionsListController {
         }
     }
 
-    validateScheduleLoop()
+    validateScheduleLoop(editing)
     {
+     // log(editing)
         if(this.schedule_every > 12 )
         {
             this.enableScheduleLoop('month', false);
@@ -192,11 +193,16 @@ class TransactionsListController {
         };
     }
 
-    setAttr( select)
+    setAttrFrom(select, scope)
     {
-        // log('editing', editing)
-        log('select', select)
-        // editing.from =
+        var path = select.find(":selected").attr('breadcrumbs');
+        scope.vm.editing.from = JSON.parse(path);
+    }
+
+    setAttrTo(select, scope)
+    {
+        var path = select.find(":selected").attr('breadcrumbs');
+        scope.vm.editing.to = JSON.parse(path);
     }
 }
 

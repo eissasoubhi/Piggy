@@ -51,6 +51,36 @@
     },
     {
         "id": 7,
+        "name": "House Rent",
+        "location": ["Home", "House stuff"],
+        "path": ["Home", "House stuff", "House Rent"],
+        "parent_group": ["House stuff"],
+        "type": "mt",
+        "created_at": "May 23, 2014 11:47:56 PM",
+        "updated_at": "May 23, 2014 11:47:56 PM"
+    },
+    {
+        "id": 8,
+        "name": "House gas",
+        "location": ["Home", "House stuff"],
+        "path": ["Home", "House stuff", "House gas"],
+        "parent_group": ["House stuff"],
+        "type": "mt",
+        "created_at": "May 23, 2014 11:47:56 PM",
+        "updated_at": "May 23, 2014 11:47:56 PM"
+    },
+    {
+        "id": 9,
+        "name": "House electricity",
+        "location": ["Home", "House stuff"],
+        "path": ["Home", "House stuff", "House electricity"],
+        "parent_group": ["House stuff"],
+        "type": "mt",
+        "created_at": "May 23, 2014 11:47:56 PM",
+        "updated_at": "May 23, 2014 11:47:56 PM"
+    },
+    {
+        "id": 10,
         "name": "Entertainment",
         "location": ["Home"],
         "path": ["Home", "Entertainment"],
@@ -62,7 +92,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "id": 8,
+        "id": 11,
         "name": "Tech stuff",
         "location": ["Home"],
         "path": ["Home", "Tech stuff"],
@@ -74,7 +104,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "id": 8,
+        "id": 12,
         "name": "House stuff",
         "location": ["Home"],
         "path": ["Home", "House stuff"],
@@ -86,7 +116,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "id": 8,
+        "id": 13,
         "name": "Phone accessory",
         "location": ["Home", "Tech stuff"],
         "path": ["Home", "Tech stuff", "Phone accessory"],
@@ -98,7 +128,7 @@
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
     {
-        "id": 8,
+        "id": 14,
         "name": "Computer accessory",
         "location": ["Home", "Tech stuff"],
         "path": ["Home", "Tech stuff", "Computer accessory"],

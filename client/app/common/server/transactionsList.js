@@ -3,9 +3,10 @@
         "from": ["Home", "Bank account"],
         "from_id": 5,
         "to": ["Home", "Wallet"],
+        "to_id": 2,
         "amount": "$150",
-        "scheduled": false,
         "next_scheduled_tran": false,
+        "scheduled": false,
         "created_at": "May 23, 2014 11:47:56 PM",
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
@@ -13,8 +14,14 @@
         "from": ["Home", "Bank account"],
         "from_id": 5,
         "to": ["Home", "House stuff", "House Rent"],
+        "to_id": 7,
         "amount": "$530",
-        "scheduled": "Every month",
+        "scheduled": {
+            "every": 1,
+            "period": "month",
+            "on": 19,
+            "at": 21
+        },
         "next_scheduled_tran": "Jan 23, 2014 11:47:56 PM",
         "created_at": "May 23, 2014 11:47:56 PM",
         "updated_at": "May 23, 2014 11:47:56 PM"
@@ -23,9 +30,15 @@
         "from": ["Home", "Wallet"],
         "from_id": 6,
         "to": ["Home", "Tech stuff", "Phone"],
+        "to_id": 5,
         "amount": "$100",
-        "scheduled": false,
-        "next_scheduled_tran": false,
+        "scheduled": {
+            "every": 1,
+            "period": "day",
+            "on": false,
+            "at": 21
+        },
+        "next_scheduled_tran": "May 23, 2014 11:47:56 PM",
         "created_at": "May 23, 2014 11:47:56 PM",
         "updated_at": "May 23, 2014 11:47:56 PM"
     },
@@ -33,8 +46,14 @@
         "from": ["Home", "Bank account"],
         "from_id": 5,
         "to": ["Home", "House stuff", "House gas"],
+        "to_id": 8,
         "amount": "$10",
-        "scheduled": "Every month",
+        "scheduled": {
+            "every": 2,
+            "period": "month",
+            "on": 1,
+            "at": 23
+        },
         "next_scheduled_tran": "Jan 23, 2014 11:47:56 PM",
         "created_at": "May 23, 2014 11:47:56 PM",
         "updated_at": "May 23, 2014 11:47:56 PM"
@@ -43,8 +62,14 @@
         "from": ["Home", "Bank account"],
         "from_id": 5,
         "to": ["Home", "House stuff", "House electricity"],
+        "to_id": 9,
         "amount": "$15",
-        "scheduled": "Every month",
+        "scheduled": {
+            "every": 1,
+            "period": "week",
+            "on": "monday",
+            "at": 17
+        },
         "next_scheduled_tran": "Jan 23, 2014 11:47:56 PM",
         "created_at": "May 23, 2014 11:47:56 PM",
         "updated_at": "May 23, 2014 11:47:56 PM"

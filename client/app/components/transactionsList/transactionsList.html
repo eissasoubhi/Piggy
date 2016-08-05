@@ -38,7 +38,7 @@
                                     <td breadcrumbs="transaction.from" ></td>
                                     <td breadcrumbs="transaction.to" ></td>
                                     <td > {{ transaction.amount }} </td>
-                                    <td > {{ transaction.scheduled || "-" }} </td>
+                                    <td tran-schedule="transaction.scheduled" ></td>
                                     <td class="a-right a-right "> {{ transaction.next_scheduled_tran  || "-" }} </td>
                                     <td class=" "> {{ transaction.created_at }} </td>
                                     <td class="a-right a-right "> {{ transaction.updated_at }} </td>
