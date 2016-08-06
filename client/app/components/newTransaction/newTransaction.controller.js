@@ -98,10 +98,30 @@ class NewTransactionController {
 
     setDaysNumbersArray()
     {
+        var text, last_digit;
         for (var i = 1; i <= 31; i++) {
+            text = 'the ';
+            last_digit = i.toString().substr(i.toString().length - 1);
+            if(last_digit == 1 && i != 11)
+            {
+                text += i+' st'
+            }
+            else if(last_digit == 2 && i != 12)
+            {
+                text += i+' nd'
+            }
+            else if(last_digit == 3 && i != 13)
+            {
+                text += i+' rd'
+            }
+            else
+            {
+                text += i+' th'
+            }
+
             this.days_numbers.push({
                 'value': i,
-                'text': i+' th'
+                'text': text
             })
         };
     }

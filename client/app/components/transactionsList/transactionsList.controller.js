@@ -143,10 +143,30 @@ class TransactionsListController {
 
     setDaysNumbersArray()
     {
+        var text, last_digit;
         for (var i = 1; i <= 31; i++) {
+            text = 'the ';
+            last_digit = i.toString().substr(i.toString().length - 1);
+            if(last_digit == 1 && i != 11)
+            {
+                text += i+' st'
+            }
+            else if(last_digit == 2 && i != 12)
+            {
+                text += i+' nd'
+            }
+            else if(last_digit == 3 && i != 13)
+            {
+                text += i+' rd'
+            }
+            else
+            {
+                text += i+' th'
+            }
+
             this.days_numbers.push({
                 'value': i,
-                'text': i+' th'
+                'text': text
             })
         };
     }
@@ -175,8 +195,6 @@ class TransactionsListController {
 
     validateScheduleLoop(select, scope)
     {
-     // log(editing)
-        // if(this.schedule_every > 12 )
         var self = scope.vm;
         var selected = scope.$eval(select.attr('select2'))
         // log('selected', selected)
