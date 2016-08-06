@@ -1,4 +1,4 @@
-let select2optionComponent = function ($parse, $compile)
+let select2optionComponent = function ($parse)
 {
     'ngInject';
     return{
@@ -12,24 +12,27 @@ let select2optionComponent = function ($parse, $compile)
                             var all_options = scope.$parent.vm.schedule_loop;
                             var value = select.find('option').not(':disabled').first().val()
                             var data = scope.$eval(select.attr('options'));
-
-                            for (var i = 0; i < all_options.length; i++) {
-                                if(all_options[i].value == scope.$parent.vm.schedule_loop_selected)
-                                {
-                                    if(all_options[i].enabled)
+                            var selected = scope.$eval($(element).parents('select').attr('select2'))
+                            if(selected)
+                            {
+                                for (var i = 0; i < all_options.length; i++) {
+                                    if(all_options[i].value == selected)
                                     {
-                                        select.val(all_options[i].value);
+                                        if(all_options[i].enabled)
+                                        {
+                                            select.val(all_options[i].value);
+                                        }
+                                        else
+                                        {
+                                            select.val(value);
+                                        }
+                                        break;
                                     }
-                                    else
-                                    {
-                                        select.val(value);
-                                    }
-                                    break;
-                                }
-                            };
+                                };
 
-                            select.select2(data);
-                            select.change();
+                                select.select2(data);
+                                select.change();
+                            }
                     }, 0)
                 })
             }

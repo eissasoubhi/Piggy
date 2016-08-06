@@ -151,35 +151,43 @@ class TransactionsListController {
         };
     }
 
-    daysFormat()
+    daysFormat(select, scope)
     {
-        this.disable_days = false;
+        var self = scope.vm;
+        var selected = scope.$eval(select.attr('select2'))
 
-        if(this.schedule_loop_selected == 'month')
+        self.disable_days = false;
+
+        if(selected == 'month')
         {
-            this.days = this.days_numbers;
+            self.days = self.days_numbers;
         }
         else
         {
-            if(this.schedule_loop_selected == 'day')
+            if(selected == 'day')
             {
-                this.disable_days = true
+                self.disable_days = true
             }
 
-            this.days = this.days_names;
+            self.days = self.days_names;
         }
     }
 
-    validateScheduleLoop(editing)
+    validateScheduleLoop(select, scope)
     {
      // log(editing)
-        if(this.schedule_every > 12 )
+        // if(this.schedule_every > 12 )
+        var self = scope.vm;
+        var selected = scope.$eval(select.attr('select2'))
+        // log('selected', selected)
+        // log('self', scope.vm)
+        if(selected > 12 )
         {
-            this.enableScheduleLoop('month', false);
+            self.enableScheduleLoop('month', false);
         }
         else
         {
-            this.enableScheduleLoop('month', true);
+            self.enableScheduleLoop('month', true);
         }
     }
 

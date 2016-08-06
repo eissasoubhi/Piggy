@@ -22,7 +22,7 @@ let select2Component = function ($parse)
                     if(attrs.select2)
                     {
                         $(element).on('select2:select', function (evt) {
-                            // log($(this).val())
+                            // log('on select2:select', evt.params.data.id)
                             scope.$apply(function(){
                                 if(bytext)
                                 {
@@ -41,6 +41,10 @@ let select2Component = function ($parse)
                             var select = $(this)
                             var val = select.val()
 
+                            if(val == null)
+                            {
+                                return 0;
+                            }
                             setTimeout(function  () {
                                  scope.$apply(function(){
                                     if(bytext)
@@ -73,8 +77,16 @@ let select2Component = function ($parse)
                                                                 return $(this).html() == newValue
                                                             }).val();
                                     }
-                                    $(element).val(selected_value)
-                                    $(element).change();
+                                    if(selected_value)
+                                    {
+                                        $(element).val(selected_value)
+                                        $(element).change();
+                                    }
+                                    else
+                                    {
+                                        $(element).attr('disabled', 'disabled');
+                                    }
+
                                 }
                                 if (typeof _scope.selectChange() == 'function')
                                 {
