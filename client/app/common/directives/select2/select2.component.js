@@ -40,6 +40,7 @@ let select2Component = function ($parse)
                         $(element).on('change', function (evt) {
                             var select = $(this)
                             var val = select.val()
+                            // log('change', val)
 
                             if(val == null)
                             {
@@ -77,7 +78,8 @@ let select2Component = function ($parse)
                                                                 return $(this).html() == newValue
                                                             }).val();
                                     }
-                                    if(selected_value)
+
+                                    if(selected_value || selected_value == 0)
                                     {
                                         $(element).val(selected_value)
                                         $(element).change();
@@ -92,14 +94,15 @@ let select2Component = function ($parse)
                                 {
                                     _scope.selectChange()($(element), scope);
                                 }
-
+                                // scope.watchModel = watchModel;
                                 scope.refresh_modal = true;
                             });
+
                         }
                         scope.$apply(function  () {
                             watchModel();
                         })
-
+                        // scope.$parent.refresModal = watchModel;
                     }
 
                 }, 0)

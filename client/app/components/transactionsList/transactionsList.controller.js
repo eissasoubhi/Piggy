@@ -64,12 +64,15 @@ class TransactionsListController {
     edit(editing)
     {
         var ctrl = this;
-        var modalInstance = this.modal.open({
+        this.modal_instance = this.modal.open({
         animation: true,
         template: transactionsList_edit,
         controller : function() {
             this.__proto__ = ctrl;
-            this.editing = editing;
+            this.editing_model = editing;
+            this.editing = $.extend(true, {}, editing);
+            this.editing.edit_schedule = !!this.editing.scheduled;
+            this.editing.default_schedule = {"every": 1, "period": "month", "on": 1, "at": 0 };
             this.options = {
                         templateResult: function (option)
                         {
@@ -135,7 +138,7 @@ class TransactionsListController {
         for (var i = 0; i <= 23; i++) {
             time_format = i > 9 ? "" + i: "0" + i;
             this.times.push({
-                'value': time_format,
+                'value': i,
                 'text': time_format + ':00'
             })
         };
@@ -149,19 +152,19 @@ class TransactionsListController {
             last_digit = i.toString().substr(i.toString().length - 1);
             if(last_digit == 1 && i != 11)
             {
-                text += i+' st'
+                text += i+'st'
             }
             else if(last_digit == 2 && i != 12)
             {
-                text += i+' nd'
+                text += i+'nd'
             }
             else if(last_digit == 3 && i != 13)
             {
-                text += i+' rd'
+                text += i+'rd'
             }
             else
             {
-                text += i+' th'
+                text += i+'th'
             }
 
             this.days_numbers.push({
@@ -229,6 +232,18 @@ class TransactionsListController {
     {
         var path = select.find(":selected").attr('breadcrumbs');
         scope.vm.editing.to = JSON.parse(path);
+    }
+
+    update()
+    {
+        $.extend(true, this.editing_model, this.editing);
+
+        this.close();
+    }
+
+    close()
+    {
+        this.modal_instance.dismiss('cancel');
     }
 }
 

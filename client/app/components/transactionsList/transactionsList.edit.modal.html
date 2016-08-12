@@ -41,14 +41,14 @@
         </div>
         {{vm.editing.scheduled}}
         <div class="form-group">
-            <label class="control-label col-md-2 col-sm-3 col-xs-12">Every </label>
+            <label class="control-label col-md-2 col-sm-3 col-xs-12">Every <input edit-schedule="vm.editing.edit_schedule" ng-model="vm.editing.edit_schedule" type="checkbox" id="check-schedule" > </label>
             <div class="col-md-1 col-sm-1 col-xs-12">
                 <select class="form-control" select-change="vm.validateScheduleLoop"  ng-disabled="!vm.editing.scheduled.every" select2="vm.editing.scheduled.every" >
                     <option  ng-repeat="schedule in vm.schedule_every_array" value="{{schedule}}">{{ schedule }}</option>
                 </select>
             </div>
             <div class="col-md-2 col-sm-1 col-xs-12">
-                <select class="form-control" select-change="vm.daysFormat" select2="vm.editing.scheduled.period" >
+                <select class="form-control" select-change="vm.daysFormat" select2="vm.editing.scheduled.period" ng-disabled="!vm.editing.scheduled.period">
                     <option select2option="loop.enabled" ng-disabled="!loop.enabled" ng-repeat="loop in vm.schedule_loop" value="{{loop.value}}">{{ loop.text }}</option>
                 </select>
             </div>
@@ -56,13 +56,13 @@
                 <div class="row">
                     <label class="control-label col-md-2 col-sm-2 col-xs-12">On </label>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select ng-disabled="vm.disable_days" class=" form-control" required="required" select2="vm.editing.scheduled.on">
-                            <option ng-repeat="day in vm.days" value="{{day.value}}">{{ day.text }}</option>
+                        <select ng-disabled="vm.disable_days || !vm.editing.scheduled.on" class=" form-control" required="required" select2="vm.editing.scheduled.on">
+                            <option options-model="vm.days" ng-repeat="day in vm.days" value="{{day.value}}">{{ day.text }}</option>
                         </select>
                     </div>
                     <label class="control-label col-md-2 col-sm-2 col-xs-12">At </label>
                     <div class="col-md-4 col-sm-4 col-xs-12">
-                        <select class="form-control" select2="vm.editing.scheduled.at">
+                        <select class="form-control" select2="vm.editing.scheduled.at" ng-disabled="!vm.editing.scheduled.at">
                             <option ng-repeat="time in vm.times" value="{{time.value}}">{{ time.text }}</option>
                         </select>
                     </div>
@@ -75,8 +75,8 @@
         <div class="ln_solid"></div>
         <div class="form-group">
             <div class="col-md-8 col-sm-6 col-xs-12 col-md-offset-2">
-                <button type="submit" class="btn btn-primary">Cancel</button>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-primary" ng-click="vm.close()">Cancel</button>
+                <button type="submit" class="btn btn-success" ng-click="vm.update()">Submit</button>
             </div>
         </div>
     </form>

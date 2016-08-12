@@ -21,7 +21,7 @@ let breadcrumbsComponent = function ($parse)
                     }
 
                     $(element).html(breadcrumbs);
-                })
+                }, true)
             }
     }
 }

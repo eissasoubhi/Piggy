@@ -9,7 +9,6 @@ let tranScheduleComponent = function ($parse)
                 var tran_schedule, plural;
 
                 scope.$watch(model, function (schedule, oldValue, scope) {
-
                     if(schedule && typeof schedule == "object")
                     {
                         plural = schedule.every > 1 ? true : false;
@@ -21,7 +20,7 @@ let tranScheduleComponent = function ($parse)
                     }
 
                     $(element).html(tran_schedule);
-                })
+                }, true)
             }
     }
 }
