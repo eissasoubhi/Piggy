@@ -39,7 +39,7 @@
                 </select>
             </div>
         </div>
-        {{vm.editing.scheduled}}
+        <!-- {{vm.editing.scheduled}} -->
         <div class="form-group">
             <label class="control-label col-md-2 col-sm-3 col-xs-12">Every <input edit-schedule="vm.editing.edit_schedule" ng-model="vm.editing.edit_schedule" type="checkbox" id="check-schedule" > </label>
             <div class="col-md-1 col-sm-1 col-xs-12">
@@ -69,9 +69,14 @@
                 </div>
             </div>
         </div>
-        <pre>
+        <!-- <pre class="col-md-6">
+            <h2>editing</h2>
             {{ vm.editing | json}}
         </pre>
+        <pre class="col-md-6">
+            <h2>editing_model</h2>
+            {{ vm.editing_model | json}}
+        </pre> -->
         <div class="ln_solid"></div>
         <div class="form-group">
             <div class="col-md-8 col-sm-6 col-xs-12 col-md-offset-2">

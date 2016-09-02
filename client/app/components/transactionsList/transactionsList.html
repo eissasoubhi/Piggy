@@ -7,12 +7,13 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
+
                         <h2>List of Money trackers <small>{{ vm.items_count}} items</small></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         <!-- <pre id="default-spacing">{{ vm | json }}</pre> -->
-                        <table id="example"    class="table table-striped responsive-utilities jambo_table">
+                        <table id="example"  js-data-table="vm.datatables_options"  class="table table-striped responsive-utilities jambo_table">
                             <thead>
                                 <tr class="headings">
                                     <th>
@@ -31,12 +32,13 @@
                             </thead>
 
                             <tbody>
-                                <tr class="{{ $even ? 'even' : 'odd' }} pointer" ng-repeat="transaction in vm.items" role="row" js-data-table="vm.datatables_options">
+                                <tr class="{{ $even ? 'even' : 'odd' }} pointer" ng-repeat="transaction in vm.items" role="row" >
                                     <td class="a-center ">
                                         <input type="checkbox" class="tableflat" icheck table-check>
                                     </td>
                                     <td breadcrumbs="transaction.from" ></td>
                                     <td breadcrumbs="transaction.to" ></td>
+                                    <!-- <td  > <pre> {{ transaction | json}} </pre> </td> -->
                                     <td > {{ transaction.amount }} </td>
                                     <td tran-schedule="transaction.scheduled" ></td>
                                     <td class="a-right a-right "> {{ transaction.next_scheduled_tran  || "-" }} </td>
@@ -44,7 +46,7 @@
                                     <td class="a-right a-right "> {{ transaction.updated_at }} </td>
                                     <td class=" last">
                                         <a href="#" ng-click="vm.edit(transaction)"><i class="fa fa-edit"></i></a>
-                                        <a href="#" title=""><i class="fa fa-times"></i></a>
+                                        <a href="#" title=""  ng-click="vm.remove($index)"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                             </tbody>

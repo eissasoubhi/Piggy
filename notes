@@ -1,0 +1,2 @@
+prevent creating groups and mt/mb with identical names in the same level
+prevent mt and mb to have identical IDs : echo str_replace([' ', '0.'], '', microtime());

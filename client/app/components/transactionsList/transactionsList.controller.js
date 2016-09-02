@@ -58,6 +58,7 @@ class TransactionsListController {
             self.items = data
             self.items_count = data.length
             self.loading = false;
+            // info("items", self.items)
         })
     }
 
@@ -236,9 +237,14 @@ class TransactionsListController {
 
     update()
     {
-        $.extend(true, this.editing_model, this.editing);
-
+        $.extend(this.editing_model, this.editing);
         this.close();
+    }
+
+    remove(index)
+    {
+        this.items.splice(index, 1);
+        info(this.items)
     }
 
     close()

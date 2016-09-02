@@ -8,7 +8,7 @@ let jsDataTableComponent = function ()
                 {
                     setTimeout(function () {
                             var data = scope.$eval(attrs.jsDataTable);
-                            $(element).parents('table').dataTable(data);
+                            $(element).dataTable(data);
                     }, 0)
                 }
 
