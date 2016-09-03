@@ -1,5 +1,5 @@
-    import 'expose?jQuery!jquery';
-    import 'expose?$!jquery';
+    // import 'expose?jQuery!jquery';
+    // import 'expose?$!jquery';
     import './utility/tools.js';
     import './utility/helpers.js';
     import 'bootstrap';
@@ -14,3 +14,4 @@
     import 'angular-material';
     import 'angular-material/angular-material.css';
     import 'devbridge-autocomplete';
+    // import 'angular-datatables';

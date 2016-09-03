@@ -13,7 +13,8 @@
                     </div>
                     <div class="x_content">
                         <!-- <pre id="default-spacing">{{ vm | json }}</pre> -->
-                        <table id="example"  js-data-table="vm.datatables_options"  class="table table-striped responsive-utilities jambo_table">
+                        <!-- js-data-table="vm.datatables_options" -->
+                        <table id="example" datatable="ng" dt-options="vm.datatables_options" class="table table-striped responsive-utilities jambo_table">
                             <thead>
                                 <tr class="headings">
                                     <th>

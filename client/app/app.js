@@ -1,4 +1,7 @@
+import 'expose?jQuery!jquery';
+import 'expose?$!jquery';
 import angular from 'angular';
+import datatables from 'angular-datatables';
 import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
@@ -11,7 +14,8 @@ var app = angular.module('app', [
     Common.name,
     Components.name,
     'ui.bootstrap',
-    'ngMaterial'
+    'ngMaterial',
+    datatables
   ])
   .config(($locationProvider, $urlRouterProvider) => {
     "ngInject";
