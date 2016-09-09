@@ -1,5 +1,6 @@
 class NewTransactionController {
-    constructor(NewTransactionService) {
+    constructor(NewTransactionService)
+    {
         'ngInject';
         this.service = NewTransactionService;
         this.completed_loading = 0;
@@ -30,26 +31,45 @@ class NewTransactionController {
                             {'text': 'Saturday', 'value': 'saturday'}];
 
         this.days = this.days_numbers;
-        this.options = {
-                    templateResult: function (option)
-                    {
-                        function hightlight(path) {
-                            var paths = path.split('>');
-                            paths[paths.length - 1] = '<strong>' + paths[paths.length - 1] + '</strong>';
-                            return paths.join('>');
-                        }
-                        if($(option.element).data('type'))
+            this.options = {
+                        templateResult: function (option)
                         {
-                            var type = $(option.element).data('type');
-                            return $('<div>' + hightlight(option.text) + '<span class="m_type">' + type + '</span></div>');
-                        }
+                            function hightlight(path) {
+                                var paths = path.split('>');
+                                paths[paths.length - 1] = '<strong>' + paths[paths.length - 1] + '</strong>';
+                                return paths.join('>');
+                            }
 
-                        return $('<div>' + hightlight(option.text) + '</div>');
-                    }
-                };
+                            function icon(type) {
+                                if(type == 'mb')
+                                {
+                                    return '<i class="fa fa-archive"></i>';
+                                }
+                                else if(type == 'mt')
+                                {
+                                    return '<i class="fa fa-map"></i>';
+                                }
+                                else if(type.indexOf('group') > -1)
+                                {
+                                    return '<i class="fa fa-folder"></i>';
+                                }
+
+                                return '';
+                            }
+
+                            if($(option.element).data('type'))
+                            {
+                                var type = $(option.element).data('type');
+                                return $('<div><span class="m_type">' + icon(type) + '</span>' + hightlight(option.text) + '</div>');
+                            }
+
+                            return $('<div>' + hightlight(option.text) + '</div>');
+                        }
+                    };;
     }
 
-    loadInfo(){
+    loadInfo()
+    {
         var self = this;
         this.service.moneyBoxes().success(function(money_boxes){
                 self.money_boxes = money_boxes;
@@ -65,7 +85,6 @@ class NewTransactionController {
                 self.made_transactions = data.made_transactions;
                 self.loadingCompleted();
             })
-
     }
 
     loadingCompleted()
@@ -76,14 +95,15 @@ class NewTransactionController {
             this.loading = false;
         }
     }
-
+    //
     setScheduleArray()
     {
+        this.schedule_every_array = [];
         for (var i = 1; i <= 30; i++) {
             this.schedule_every_array.push(i)
         };
     }
-
+    //
     setTimesArray()
     {
         var time_format;
@@ -95,7 +115,7 @@ class NewTransactionController {
             })
         };
     }
-
+    //
     setDaysNumbersArray()
     {
         var text, last_digit;
@@ -104,19 +124,19 @@ class NewTransactionController {
             last_digit = i.toString().substr(i.toString().length - 1);
             if(last_digit == 1 && i != 11)
             {
-                text += i+' st'
+                text += i+'st'
             }
             else if(last_digit == 2 && i != 12)
             {
-                text += i+' nd'
+                text += i+'nd'
             }
             else if(last_digit == 3 && i != 13)
             {
-                text += i+' rd'
+                text += i+'rd'
             }
             else
             {
-                text += i+' th'
+                text += i+'th'
             }
 
             this.days_numbers.push({
@@ -125,19 +145,23 @@ class NewTransactionController {
             })
         };
     }
-
-    validateScheduleLoop()
+    //
+    validateScheduleLoop(select, scope)
     {
-        if(this.schedule_every > 12 )
+        var self = scope ? scope.vm : this;
+        var selected = scope ? scope.$eval(select.attr('select2')) : this.schedule_every;
+        // log('selected', selected)
+        // log('self', scope.vm)
+        if(selected > 12 )
         {
-            this.enableScheduleLoop('month', false);
+            self.enableScheduleLoop('month', false);
         }
         else
         {
-            this.enableScheduleLoop('month', true);
+            self.enableScheduleLoop('month', true);
         }
     }
-
+    //
     enableScheduleLoop(loop_name, enable = true)
     {
         for (var i = 0; i < this.schedule_loop.length; i++) {
@@ -147,23 +171,26 @@ class NewTransactionController {
             }
         };
     }
-
-    daysFormat()
+    //
+    daysFormat(select, scope)
     {
-        this.disable_days = false;
+        var self = scope ? scope.vm : this;
+        var selected = scope ? scope.$eval(select.attr('select2')) : this.schedule_loop_selected;
 
-        if(this.schedule_loop_selected == 'month')
+        self.disable_days = false;
+
+        if(selected == 'month')
         {
-            this.days = this.days_numbers;
+            self.days = self.days_numbers;
         }
         else
         {
-            if(this.schedule_loop_selected == 'day')
+            if(selected == 'day')
             {
-                this.disable_days = true
+                self.disable_days = true
             }
 
-            this.days = this.days_names;
+            self.days = self.days_names;
         }
     }
 }
