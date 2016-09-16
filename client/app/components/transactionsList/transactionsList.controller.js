@@ -2,10 +2,10 @@ import transactionsList_edit from './transactionsList.edit.modal.html';
 import NewTransactionController from '../newTransaction/newTransaction.controller.js';
 
 class TransactionsListController {
-    constructor(TransactionsListService, $uibModal, NewTransactionService)
+    constructor(TransactionsListService, $uibModal, NewTransactionService, GlobalOptionsService)
     {
         'ngInject';
-        var parent = new NewTransactionController(NewTransactionService)
+        var parent = new NewTransactionController(NewTransactionService, GlobalOptionsService)
 
         this.__proto__.__proto__ = parent
 

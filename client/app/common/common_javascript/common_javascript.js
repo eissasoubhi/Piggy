@@ -1,17 +1,19 @@
-    // import 'expose?jQuery!jquery';
-    // import 'expose?$!jquery';
-    import './utility/tools.js';
-    import './utility/helpers.js';
-    import 'bootstrap';
-    import 'icheck';
-    import 'chart.js';
-    import './../../assets/js/custom.js';
-    import 'datatables';
-    import './../../assets/js/datatables/tools/js/dataTables.tableTools.js';
-    import 'select2/dist/js/select2.full.min.js';
-    import './../../assets/css/select/select2.min.css';
-    import 'angular-ui-bootstrap';
-    import 'angular-material';
-    import 'angular-material/angular-material.css';
-    import 'devbridge-autocomplete';
-    // import 'angular-datatables';
+import angular from 'angular';
+
+var commons_js = ['global', 'inc', 'utility'];
+
+var i, dependencies = [];
+
+for(i in commons_js)
+{
+    var common_js_name = commons_js[i];
+    var common_js = require('./' + common_js_name +'/' + common_js_name);
+    if(common_js.default && common_js.default.name)
+    {
+        dependencies.push(common_js.default.name)
+    }
+}
+
+let commonJavascriptModule = angular.module('app.common_javascript',  dependencies);
+
+export default commonJavascriptModule;

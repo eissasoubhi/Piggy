@@ -6,6 +6,7 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import GlobalOptionsService from './../app/common/common_javascript/global/options.service';
 
 import 'normalize.css';
 
@@ -30,4 +31,6 @@ var app = angular.module('app', [
   .constant('config', {
       serverHost: 'http://localhost:3000/',
       serverFolder: 'app/common/server/'
-  });
+  })
+
+  .service('GlobalOptionsService', GlobalOptionsService);

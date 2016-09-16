@@ -1,5 +1,5 @@
 class NewTransactionController {
-    constructor(NewTransactionService)
+    constructor(NewTransactionService, GlobalOptionsService)
     {
         'ngInject';
         this.service = NewTransactionService;
@@ -13,7 +13,7 @@ class NewTransactionController {
         this.days_numbers = [];
         this.times = [];
         this.schedule_every = 1;
-        this.loadInfo();
+
         this.setScheduleArray();
         this.setDaysNumbersArray();
         this.setTimesArray();
@@ -22,50 +22,9 @@ class NewTransactionController {
                               {'text': 'week(s)', 'value': 'week', 'enabled': true},
                               {'text': 'day(s)', 'value': 'day', 'enabled': true}];
         this.schedule_loop_selected = this.schedule_loop[0].value;
-        this.days_names = [{'text': 'Sunday', 'value': 'sunday'},
-                            {'text': 'Monday', 'value': 'monday'},
-                            {'text': 'Tuesday', 'value': 'tuesday'},
-                            {'text': 'Wednesday', 'value': 'wednesday'},
-                            {'text': 'Thursday', 'value': 'thursday'},
-                            {'text': 'Friday', 'value': 'friday'},
-                            {'text': 'Saturday', 'value': 'saturday'}];
-
         this.days = this.days_numbers;
-            this.options = {
-                        templateResult: function (option)
-                        {
-                            function hightlight(path) {
-                                var paths = path.split('>');
-                                paths[paths.length - 1] = '<strong>' + paths[paths.length - 1] + '</strong>';
-                                return paths.join('>');
-                            }
-
-                            function icon(type) {
-                                if(type == 'mb')
-                                {
-                                    return '<i class="fa fa-archive"></i>';
-                                }
-                                else if(type == 'mt')
-                                {
-                                    return '<i class="fa fa-map"></i>';
-                                }
-                                else if(type.indexOf('group') > -1)
-                                {
-                                    return '<i class="fa fa-folder"></i>';
-                                }
-
-                                return '';
-                            }
-
-                            if($(option.element).data('type'))
-                            {
-                                var type = $(option.element).data('type');
-                                return $('<div><span class="m_type">' + icon(type) + '</span>' + hightlight(option.text) + '</div>');
-                            }
-
-                            return $('<div>' + hightlight(option.text) + '</div>');
-                        }
-                    };;
+        this.days_names = GlobalOptionsService.days_of_week;
+        this.options = GlobalOptionsService.datatables_options
     }
 
     loadInfo()
