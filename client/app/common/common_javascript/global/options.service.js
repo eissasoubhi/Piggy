@@ -2,7 +2,7 @@ class  GlobalOptionsService {
 
     constructor() {
         "ngInject";
-        this.datatables_options = {
+        this.select2_options = {
                     templateResult: function (option)
                     {
                         function hightlight(path) {
@@ -44,6 +44,23 @@ class  GlobalOptionsService {
                             {'text': 'Thursday', 'value': 'thursday'},
                             {'text': 'Friday', 'value': 'friday'},
                             {'text': 'Saturday', 'value': 'saturday'}];
+
+        this.datatables_options = {
+                "oLanguage": {
+                    "sSearch": "Search all columns:"
+                },
+                "aoColumnDefs": [{
+                        'bSortable': false,
+                        'aTargets': [0]
+                    } //disables sorting for column one
+                ],
+                'iDisplayLength': 12,
+                "sPaginationType": "full_numbers",
+                "dom": 'T<"clear">lfrtip',
+                "tableTools": {
+                    "sSwfPath": "app/assets/js/datatables/tools/swf/copy_csv_xls_pdf.swf"
+                }
+            };
     }
 }
 export default GlobalOptionsService

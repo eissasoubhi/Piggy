@@ -11,7 +11,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <table id="example" class="table table-striped responsive-utilities jambo_table" >
+                        <table id="example" datatable="ng" dt-options="vm.datatables_options" class="table table-striped responsive-utilities jambo_table" >
                             <thead>
                                 <tr class="headings">
                                     <th>
@@ -29,19 +29,19 @@
                             </thead>
 
                             <tbody>
-                                <tr class="{{ $even ? 'even' : 'odd' }} pointer" ng-repeat="money_boxe in vm.items" role="row" js-data-table="vm.datatables_options">
+                                <tr class="{{ $even ? 'even' : 'odd' }} pointer" ng-repeat="money_boxe in vm.items" role="row" >
                                     <td class="a-center ">
                                         <input type="checkbox" class="tableflat" icheck table-check>
                                     </td>
                                     <td >{{ money_boxe.name }}</td>
-                                    <td breadcrumbs="{{ money_boxe.location }}"></td>
+                                    <td breadcrumbs="money_boxe.location"></td>
                                     <td > {{ money_boxe.amount }} </td>
-                                    <td  breadcrumbs="{{ money_boxe.parent_group }}"></td>
+                                    <td  breadcrumbs="money_boxe.parent_group"></td>
                                     <td > {{ money_boxe.created_at }} </td>
                                     <td class="a-right a-right ">  {{ money_boxe.updated_at }} </td>
                                     <td class=" last">
-                                        <a href="#" ng-click="vm.edit()"><i class="fa fa-edit"></i></a>
-                                        <a href="#" title=""><i class="fa fa-times"></i></a>
+                                        <a href="#" ng-click="vm.edit(money_boxe)"><i class="fa fa-edit"></i></a>
+                                        <a href="#" title=""  ng-click="vm.remove($index)"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
                             </tbody>

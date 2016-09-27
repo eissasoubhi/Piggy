@@ -14,22 +14,7 @@ class TransactionsListController {
         this.items_count = 0;
         this.items = [];
         this.modal = $uibModal;
-        this.datatables_options = {
-                                    "oLanguage": {
-                                        "sSearch": "Search all columns:"
-                                    },
-                                    "aoColumnDefs": [{
-                                            'bSortable': false,
-                                            'aTargets': [0]
-                                        } //disables sorting for column one
-                                    ],
-                                    'iDisplayLength': 12,
-                                    "sPaginationType": "full_numbers",
-                                    "dom": 'T<"clear">lfrtip',
-                                    "tableTools": {
-                                        "sSwfPath": "app/assets/js/datatables/tools/swf/copy_csv_xls_pdf.swf"
-                                    }
-                                };
+        this.datatables_options = GlobalOptionsService.datatables_options
         this.loadInfo();
         this.transactions_();
     }

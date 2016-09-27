@@ -24,7 +24,8 @@ class NewTransactionController {
         this.schedule_loop_selected = this.schedule_loop[0].value;
         this.days = this.days_numbers;
         this.days_names = GlobalOptionsService.days_of_week;
-        this.options = GlobalOptionsService.datatables_options
+        this.options = GlobalOptionsService.select2_options
+        this.loadInfo()
     }
 
     loadInfo()

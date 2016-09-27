@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h3 class="modal-title">Im a modal!</h3>
+</div>
+<div class="modal-body">
+    <form id="demo-form2"  class="form-horizontal form-label-left">
+
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Money Box Name <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="text" id="mt-name"  class="form-control col-md-7 col-xs-12" ng-model="vm.editing.name">
+                <div id="autocomplete-container" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+            </div>
+        </div>
+        <pre>
+            {{ vm.money_boxe_group | json}}
+        </pre>
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">parent mb-Group <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select class="select2_group form-control"  select2="vm.editing.parent_group_id"  data-options="vm.options">
+                        <option ng-repeat="mbg in vm.D" breadcrumbs="{{ mbg.path }}" data-type="{{ mbg.type }}" data-arrow=">" value=" {{ mbg.id }} "></option>
+                </select>
+            </div>
+        </div>
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-8 col-sm-6 col-xs-12 col-md-offset-2">
+                <button type="submit" class="btn btn-primary" ng-click="vm.close()">Cancel</button>
+                <button type="submit" class="btn btn-success" ng-click="vm.update()">Submit</button>
+            </div>
+        </div>
+        </div>
+
+    </form>
+</div>
